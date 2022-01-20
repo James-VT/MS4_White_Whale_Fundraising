@@ -1,108 +1,91 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# White Whale Fundraising
 
-Welcome USER_NAME,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+This website serves as the main online presence of a charitable fundraising organisation dedicated to the conservation of whales and other sea creatures. Visitors to the site can become members of the organisation for a rolling monthly or annual donation, make one-off donations, and sponsor fundraising activities. Donations for membership are at a fixed amount, while one-off donations and sponsorships can be for any amount. Users can leave public messages for fundraisers whom they have sponsored. The owner(s) of the site will be using it to drive membership subscriptions, generate donations, and raise awareness of fundraising activities.
 
 ---
 
-Happy coding!
+# Table of contents
+
+# UX
+This site is built to serve as a full-stack ecommerce site for a charitable organisation. It utilises Stripe to allow users to make donations via secure transactions, and is built using the Django framework. Users are able to register an account with the site, with which they can then become paying members if they wish, or make one-off donations or sponsor fundraisers and leave comments of encouragement.
+
+## User stories
+### A visitor to the site will want to:
+1. Learn about the charity, its goals and its work.
+2. Donate money to the charity.
+3. Register an account on the site.
+4. Become a member of the charity by submitting their details and subscribing with a monthly or annual donation.
+5. Have their bank details used only in a secure way, such as that provided by the use of Stripe.
+6. Sponsor fundraisers and fundraising activities.
+7. Leave comments for fundraisers and fundraising activities, such as messages of encouragement.
+8. Edit or delete their own comments.
+
+### A site owner will want to:
+9. Explain to users who they are, what they do and how they can help as soon as a user lands on the home page.
+10. Generate revenue via one-off donations.
+11. Grow their member base by encouraging users to become new members.
+12. Raise awareness of upcoming fundraising events.
+13. Generate sponsorships of upcoming fundraising events.
+14. Encourage interaction with users by allowing registered users to leave a message of encouragement along with their sponsorship.
+15. Add upcoming fundraising events to the site for users to see.
+
+# Credits
+
+## Technologies used
+
+* Languages:
+    * [HTML5](https://en.wikipedia.org/wiki/HTML5) was used for the content and structure of the site.
+    * [CSS3](https://en.wikipedia.org/wiki/CSS#CSS_3) was used for the styling of the site.
+    * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) was used for the interactivity of the site.
+    * [Python](https://www.python.org/) was used for the back end programming of the site.
+
+* [Django](https://www.djangoproject.com/)
+    * Django was used as the framework for the site's back-end development.
+
+* [Pip](https://pip.pypa.io/en/stable/)
+    * Pip is the package installer for Python, allowing us to install the packages we need for this site.
+
+* [Jinja](https://www.palletsprojects.com/p/jinja/)
+    * Jinja is a templating engine for Python, used to write Flask and other templating services.
+
+* [GitHub](https://github.com/)
+    * GitHub is where we host our site.
+
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+    * Lighthouse assesses our pages for accessibility, performance and other things.
+
+* [Jigsaw](https://jigsaw.w3.org/css-validator/)
+    * Jigsaw validates our CSS for best practices.
+
+* [JSHint](jshint.com)
+    * JSHint assesses our Javascript for being practices, bugs, and syntax errors.
+
+* [PEP8 Online](http://pep8online.com/)
+    * PEP8 Online checks for errors in out Python code.
+
+* [Am I Responsive?](http://ami.responsivedesign.is/#)
+    * This is where we created the header image for this README.
+
+* [favicon](favicon.io)
+    * Favicon was used to create the site's favicon.
+
+* [Heroku](https://devcenter.heroku.com/)
+    * Heroku is where we deploy this live site. Throughout, we have ensured the version being deployed to Heroku matches our development version by checking features and screen layouts on both versions.
+
+* [Balsamiq](https://balsamiq.com/)
+    * Balsamiq was used to create the wireframes for this project. 
+
+* [Git](https://git-scm.com/)
+    * Git was used for version control and saving work in the repository, using the GitPod extension in Google Chrome to commit to GitHub.
+
+* [Chrome](https://www.google.com/intl/en_uk/chrome/)
+    * This project was created in the Google Chrome browser, and as such Chrome was used as the default testing browser.
+
+* [Google Fonts](https://fonts.google.com/)
+    * The fonts for the site were imported from Google Fonts. This site uses Roboto and Just Me Again Down Here throughout.
+
+* [FontAwesome](https://fontawesome.com/)
+    * The icons for social media links were taken from FontAwesome.
+
+* [Coolors](https://coolors.co/)
+    * The colour palette for this site was chosen using Coolors.
