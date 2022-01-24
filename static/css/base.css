@@ -6,6 +6,15 @@
     color: #fff;
 }
 
+.logo {
+    margin-left: 10px;
+}
+
 .testing-class {
     display: none;
+}
+
+.gutter-remove {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
