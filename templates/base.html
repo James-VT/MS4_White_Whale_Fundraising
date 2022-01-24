@@ -32,35 +32,33 @@
 
     <title>White Whale Fundraising {% block extra_title %}{% endblock %}</title>
 </head>
-<body>
-    <header class="container-fluid fixed-top gutter-remove">
-        
-    <nav class="navbar navbar-expand-lg justify-content-center indigo">
-        <div class="container-fluid gutter-remove">
-            <h1 class="display-5 text-light logo">White Whale Fundraising</h1>
-            <a href="#" class="btn btn-lg text-light">Become a member</a>
-            <div class="icon">
-                <i class="fas fa-hand-holding-usd text-light"></i>
-                <a href="#" class="btn btn-lg text-light">Donate</a>
-            </div>
-            <div class="icon">
-                <i class="fas fa-chart-line text-light"></i>
-                <a href="#" class="btn btn-lg text-light">Sponsor a fundraiser</a>
-            </div>
-            <div class="icon">
-                <i class="fas fa-sign-in-alt text-light"></i>
-                <a href="#" class="btn btn-lg text-light">Sign in</a>
-            </div>
-            <div class="icon">
-                <i class="far fa-user-circle text-light"></i>
-                <a href="#" class="btn btn-lg text-light">My account</a>
-            </div>
-        </div>
-    </nav>
 
-    <div class="testing-class">
-        <p>Here's some writing</p>
-    </div>
+<body>
+
+    <header class="container-fluid fixed-top gutter-remove">
+        <div class="row">
+            <nav class="col-12 navbar navbar-expand-lg justify-content-center indigo">
+                <div class="row">
+                    <div class="col-4 text-center text-lg-start">
+                        <a href="{% url 'home' %}">
+                            <h2 class="display-6 text-light logo">White Whale Fundraising</h2>
+                        </a>
+                    </div>
+                    <div class="col-8 text-lg-end d-flex align-items-center">
+                            <i class="fas fa-users text-light"></i>
+                            <a href="#" class="btn btn-lg text-light">Become a member</a>
+                            <i class="fas fa-hand-holding-usd text-light"></i>
+                            <a href="#" class="btn btn-lg text-light">Donate</a>
+                            <i class="fas fa-chart-line text-light"></i>
+                            <a href="#" class="btn btn-lg text-light">Sponsor a fundraiser</a>
+                            <i class="fas fa-sign-in-alt text-light"></i>
+                            <a href="#" class="btn btn-lg text-light">Sign in</a>
+                            <i class="far fa-user-circle text-light"></i>
+                            <a href="#" class="btn btn-lg text-light">My account</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
     {% if messages %}
