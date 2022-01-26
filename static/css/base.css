@@ -14,3 +14,12 @@
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
+
+.toggler-style {
+    color: #000;
+    z-index: 999;
+}
+
+.logo-position {
+    display: block;
+}

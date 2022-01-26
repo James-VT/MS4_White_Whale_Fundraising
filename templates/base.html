@@ -34,31 +34,23 @@
 </head>
 
 <body>
-
-    <header class="container-fluid fixed-top gutter-remove">
-        <div class="row">
-            <nav class="col-12 navbar navbar-expand-lg justify-content-center indigo">
-                <div class="row">
-                    <div class="col-4 text-center text-lg-start">
-                        <a href="{% url 'home' %}">
-                            <h2 class="display-6 text-light logo">White Whale Fundraising</h2>
+    <!--text-lg-end d-flex flex-wrap align-items-center-->
+    <header class="fixed-top gutter-remove">
+        <!-- <div class="row"> -->
+            <nav class="col-12 navbar navbar-expand-lg justify-content-center navbar-light indigo">
+                <div class="row flex-wrap container-fluid ">
+                    <div class="logo-container col-12 logo-position text-center mx-auto">
+                        <a href="{% url 'home' %}" class="navbar-brand text-light logo">
+                            White Whale Fundraising
                         </a>
                     </div>
-                    <div class="col-8 text-lg-end d-flex align-items-center">
-                            <i class="fas fa-users text-light"></i>
-                            <a href="#" class="btn btn-lg text-light">Become a member</a>
-                            <i class="fas fa-hand-holding-usd text-light"></i>
-                            <a href="#" class="btn btn-lg text-light">Donate</a>
-                            <i class="fas fa-chart-line text-light"></i>
-                            <a href="#" class="btn btn-lg text-light">Sponsor a fundraiser</a>
-                            <i class="fas fa-sign-in-alt text-light"></i>
-                            <a href="#" class="btn btn-lg text-light">Sign in</a>
-                            <i class="far fa-user-circle text-light"></i>
-                            <a href="#" class="btn btn-lg text-light">My account</a>
-                    </div>
+                    <button class="navbar-toggler toggler-style" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    {% include 'includes/header-nav.html' %}
                 </div>
             </nav>
-        </div>
+        <!-- </div> -->
     </header>
 
     {% if messages %}
