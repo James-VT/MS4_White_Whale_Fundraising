@@ -5,11 +5,20 @@ from django.db import models
 
 class MembershipLevel(models.Model):
     """Defines the level of a member's subscription"""
-    name = models.CharField(max_length-254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    GOLD = 'GO'
+    SILVER = 'SI'
+    BRONZE = 'BR'
+    MEMBERSHIP_CHOICES = [
+        (GOLD, 'Gold Level'),
+        (SILVER, 'Silver Level'),
+        (BRONZE, 'Bronze Level'),
+    ]
 
-    def __str__(self):
-        return self.name
+    # name = models.CharField(max_length-254)
+    # friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
-    def get_friendly_name(self):
-        return self.friendly_name
+    # def __str__(self):
+    #     return self.name
+
+    # def get_friendly_name(self):
+    #     return self.friendly_name
