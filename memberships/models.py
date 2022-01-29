@@ -16,6 +16,8 @@ class MembershipLevel(models.Model):
         (BRONZE, 'Bronze Level'),
     ]
 
+    level = models.CharField(max_length=6, choices=MEMBERSHIP_CHOICES,
+                             default=BRONZE)
     sku = models.CharField(max_length=254, null=True, blank=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
