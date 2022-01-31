@@ -5,14 +5,35 @@ from django.db import models
 # Create your models here.
 
 
+MEMBERSHIP_CHOICES = (
+    ('Gold', 'Gold Level'),
+    ('Silver', 'Silver Level'),
+    ('Bronze', 'Bronze Level')
+)
+
+
 class Membership(models.Model):
     """ Class for memberships """
-    name = models.CharField(max_length=10)
-    description = models.TextField()
+    membership_level = models.CharField(
+        max_length=6,
+        choices=MEMBERSHIP_CHOICES,
+        default='Bronze',
+    )
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    description = models.TextField()
 
     def __str__(self):
-        return self.name
+        return self.membership_level
+
+
+# class Membership(models.Model):
+#     """ Class for memberships """
+#     name = models.CharField(max_length=10)
+#     description = models.TextField()
+#     price = models.DecimalField(max_digits=6, decimal_places=2)
+
+#     def __str__(self):
+#         return self.name
 
 
 # class MembershipLevel(models.Model):

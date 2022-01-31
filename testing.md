@@ -28,3 +28,29 @@ class MembershipLevel(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
 ```
+
+With help from an alumni at Code Institute, I was able to fix the relevant parts of this code to the following:
+
+```
+MEMBERSHIP_CHOICES = (
+    ('Gold', 'Gold Level'),
+    ('Silver', 'Silver Level'),
+    ('Bronze', 'Bronze Level')
+)
+
+
+class Membership(models.Model):
+    """ Class for memberships """
+    membership_level = models.CharField(
+        max_length=6,
+        choices=MEMBERSHIP_CHOICES,
+        default='Bronze',
+    )
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.membership_level
+```
+
+The choices variable was moved to outside the class, and the __str__ function was edited not to return name, but the membership_level constructed.
