@@ -1,9 +1,10 @@
+""" Views for the profile app """
 from django.shortcuts import render
 
 
 def profile(request):
     """ Displays the user's profile """
-    
+
     template = 'profiles/profile.html'
     context = {}
 
