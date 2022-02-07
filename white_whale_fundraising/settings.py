@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     'memberships',
     'profiles',
+    'donations',
 ]
 
 MIDDLEWARE = [
