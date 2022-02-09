@@ -89,3 +89,7 @@ This site is built to serve as a full-stack ecommerce site for a charitable orga
 
 * [Coolors](https://coolors.co/)
     * The colour palette for this site was chosen using Coolors.
+
+## Tutorials
+
+Tutorials that assisted me with this project include Code Institute's Boutique Ado and Hello Django. I also leaned heavily on Django's own documentation for 3.2, and on [this video from Youtuber Dennis Ivy for the donation app.](https://www.youtube.com/watch?v=oZwyA9lUwRk)
