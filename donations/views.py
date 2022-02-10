@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def success_msg(request, args):
+    """ Success page """
+    amount = args
+    return render(request, 'donations/donation_success.html', {'amount': amount})
