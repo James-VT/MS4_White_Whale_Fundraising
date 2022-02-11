@@ -1,3 +1,15 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('../../media/images/whitewhaleicon.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+}
+
+/* -------------------------------- Header */
+
 .indigo {
     background-color: #004de6;
 }
@@ -22,4 +34,21 @@
 
 .logo-position {
     display: block;
+}
+
+/* -------------------------------- Media Queries */
+
+/* fixed top navbar only on medium and up - taken from Code Institute's Boutique Ado */
+@media (min-width: 992px) {
+    .fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
 }
