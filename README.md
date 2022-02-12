@@ -93,3 +93,9 @@ This site is built to serve as a full-stack ecommerce site for a charitable orga
 ## Tutorials
 
 Tutorials that assisted me with this project include Code Institute's Boutique Ado and Hello Django. I also leaned heavily on Django's own documentation for 3.2, and on [this video from Youtuber Dennis Ivy for the donation app.](https://www.youtube.com/watch?v=oZwyA9lUwRk)
+
+## Images
+
+whalelighthousebanner.jpg is an open source image taken from Wikimedia Commons. Attribution: Gillfoto, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
+
+whitewhaleicon.jpg is is an open source image taken from Wikimedia Commons. Attribution: Tris T7, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
