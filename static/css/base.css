@@ -3,8 +3,8 @@ html {
 }
 
 body {
-    background: url('../../media/images/whalelighthousebanner.jpg') no-repeat center center fixed;
-    background-size: cover;
+    /* background: url('../../media/images/whalelighthousebanner.jpg') no-repeat center center fixed;
+    background-size: cover; */
     height: calc(100vh - 164px);
 }
 
@@ -35,6 +35,35 @@ body {
 .logo-position {
     display: block;
 }
+
+/* -------------------------------- Home page */
+
+/* Hero image styling, credit to https://www.w3schools.com/howto/howto_css_hero_image.asp */
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../media/images/whalelighthousebanner.jpg");
+
+    /* Set a specific height */
+    height: 50%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+/* End of hero image styling */
+
 
 /* -------------------------------- Media Queries */
 
