@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="{% static 'donations/css/donations.css' %}">
 {% endblock %}
 
+{% block extra_js %}
+    <script src="{% static 'donations/js/donations.js' %}"></script>
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -79,7 +83,7 @@
                     </div>
                     <div class="other">
                         <label for="amount">Other (enter amount):</label>
-                        <input name="amount" id="amount" required>
+                        <input name="amount" id="amount-custom" required>
                     </div>
 
                     <div>
