@@ -1,3 +1,10 @@
 .donation-form-card {
     margin: 30px;
+    background-color: #A7C7E7;
+    border-radius: 4px;
+    position: relative;
+}
+
+.form-display {
+    display: inline;
 }
