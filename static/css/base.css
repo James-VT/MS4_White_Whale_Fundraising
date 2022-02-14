@@ -36,6 +36,10 @@ body {
     display: block;
 }
 
+.header-container {
+    padding-top: 164px;
+}
+
 /* -------------------------------- Home page */
 
 /* Hero image styling, credit to https://www.w3schools.com/howto/howto_css_hero_image.asp */
@@ -75,9 +79,5 @@ body {
         right: 0;
         left: 0;
         z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 164px;
     }
 }

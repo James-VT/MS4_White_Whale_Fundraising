@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'donations/css/donations.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -12,7 +16,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-6 donation-form-card">
                 <hr>
                 <h3>Donation form</h3>
                 <h4>Your donation will help keep endangered marine species alive for future generations. This is your gift to them.</h4>
