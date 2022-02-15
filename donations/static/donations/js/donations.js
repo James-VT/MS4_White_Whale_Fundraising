@@ -1,10 +1,16 @@
-var otherValue = document.getElementById('amount-custom');
+var amountCustom = document.getElementById('amount-custom');
 
-console.log(typeof otherValue);
+console.log(typeof amountCustom);
 
-otherValue.addEventListener("click", uncheckRadio);
+amountCustom.addEventListener("click", uncheckRadio);
 
 function uncheckRadio() {
-    var radio = document.querySelector('input[type=radio]:checked');
-    radio.checked = false;
+    // var radio = document.querySelector('input[type=radio]:checked');
+    // radio.checked = false;
+    // }
+
+    if (document.querySelector('input[type=radio]:checked')) {
+        var radio = document.querySelector('input[type=radio]:checked');
+        radio.checked = false;
+    }
 }
