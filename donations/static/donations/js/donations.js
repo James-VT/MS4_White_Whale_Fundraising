@@ -1,4 +1,6 @@
-var otherValue = document.getElementById('other-value');
+var otherValue = document.getElementById('amount-custom');
+
+console.log(typeof otherValue);
 
 otherValue.addEventListener("click", uncheckRadio);
 

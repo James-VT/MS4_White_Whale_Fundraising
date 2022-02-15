@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block extra_js %}
-    <script src="{% static 'donations/js/donations.js' %}"></script>
+    
 {% endblock %}
 
 {% block page_header %}
@@ -98,4 +98,8 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script src="{% static 'donations/js/donations.js' %}"></script>
 {% endblock %}
