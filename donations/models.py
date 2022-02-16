@@ -2,15 +2,18 @@
 import uuid
 from django.db import models
 from django_countries.fields import CountryField
+from django.conf import settings
 
 
 class Donation(models.Model):
     """ Class for handling donations """
     donation_number = models.CharField(max_length=32,
                                        null=False, editable=False)
-    title = models.CharField(max_length=32, null=False, blank=False)
+    title = models.CharField(max_length=32, null=False, blank=False,
+                             default="")
     first_name = models.CharField(max_length=50, null=False, blank=False)
-    last_name = models.CharField(max_length=50, null=False, blank=False)
+    last_name = models.CharField(max_length=50, null=False, blank=False,
+                                 default="")
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
     country = CountryField(blank_label="Country *", null=False, blank=False)
@@ -28,6 +31,15 @@ class Donation(models.Model):
         Generate a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
+
+    def save(self, *args, **kwargs):
+        """
+        Overrides the original save method to set the order number
+        if it hasn't been set already - nice failsafe
+        """
+        if not self.donation_number:
+            self.donation_number = self._generate_donation_number()
+        super().save(*args, **kwargs)
 
     # def update_total(self):
     #     """
