@@ -7,9 +7,9 @@ from django.dispatch import receiver
 from django_countries.fields import CountryField
 
 
-class MemberProfile(models.Model):
+class UserProfile(models.Model):
     """
-    User profile model for storing default delivery info
+    User profile model for storing default contact info
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
@@ -25,11 +25,11 @@ class MemberProfile(models.Model):
 
 
 @receiver(post_save, sender=User)
-def create_or_update_member_profile(sender, instance, created, **kwargs):
+def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
     Creates or updates the user profile
     """
-    if created:
-        MemberProfile.objects.create(user=instance)
+    # if created:
+    UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
-    instance.memberprofile.save()
+    # instance.userprofile.save()
