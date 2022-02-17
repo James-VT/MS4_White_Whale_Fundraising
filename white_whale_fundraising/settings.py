@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'donations',
 
     # Other
-    'crispy_forms'
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
