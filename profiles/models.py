@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     """
     User profile model for storing default contact info
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     street_address1 = models.CharField(max_length=80, null=True, blank=True)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     town_or_city = models.CharField(max_length=50, null=True, blank=True)
@@ -29,7 +29,7 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
     Creates or updates the user profile
     """
-    # if created:
-    UserProfile.objects.create(user=instance)
+    if created:
+        UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
-    # instance.userprofile.save()
+    instance.userprofile.save()
