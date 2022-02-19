@@ -70,6 +70,14 @@ body {
 
 /* -------------------------------- Allauth template styling */
 
+.allauth-form-positioner {
+    background: blueviolet;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
 }
