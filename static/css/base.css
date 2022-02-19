@@ -30,6 +30,12 @@ body {
 .toggler-style {
     color: #000;
     z-index: 999;
+    width: auto;
+    margin: auto;
+}
+
+.nav-item {
+    margin: auto;
 }
 
 .logo-position {
