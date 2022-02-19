@@ -3,6 +3,8 @@
     background-color: #A7C7E7;
     border-radius: 4px;
     position: relative;
+    max-width: 600px;
+    margin: auto;
 }
 
 .form-display {
