@@ -78,7 +78,7 @@ body {
 
 .allauth-form-positioner {
     background: blueviolet;
-    /* width: 80%; */
+    width: 80%;
     margin: auto;
     height: auto;
     align-items: center;
