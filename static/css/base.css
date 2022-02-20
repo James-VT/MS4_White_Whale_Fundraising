@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+
 html {
     height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
     /* background: url('../../media/images/whalelighthousebanner.jpg') no-repeat center center fixed;
     background-size: cover; */
     height: calc(100vh - 164px);
+    background: #F2F3F4;
+}
+
+h1, h2, h3 {
+    font-family: 'Lobster', cursive;
 }
 
 /* -------------------------------- Header */
@@ -77,12 +85,20 @@ body {
 /* -------------------------------- Allauth template styling */
 
 .allauth-form-positioner {
-    background: blueviolet;
-    width: 80%;
+    background: #FF7F50;
+    max-width: 80%;
     margin: auto;
     height: auto;
     align-items: center;
     text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.allauth-form-inner-content {
+    align-items: center;
+    text-align: center;
+    margin: auto;
 }
 
 .allauth-form-inner-content p {
@@ -92,6 +108,9 @@ body {
 .allauth-form-inner-content input {
     border-color: #000;
     border-radius: 20px;
+    max-width: 70%;
+    text-align: center;
+    margin: auto;
 }
 
 .allauth-form-inner-content label:not([for="id_remember"]) {
@@ -118,6 +137,7 @@ body {
     background-color: indigo;
     border: 1px solid #000;
     padding: .375rem .75rem;
+    margin: 5px;
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 20px;
@@ -148,8 +168,8 @@ body {
     }
 }
 
-@media (max-width: 992px) {
-    .allauth-form-positioner {
-        /* margin: 1rem; */
+@media (min-width: 992px) {
+    .allauth-form-inner-content input {
+        max-width: 30%;
     }
 }
