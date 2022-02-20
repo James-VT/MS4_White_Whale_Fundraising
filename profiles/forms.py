@@ -1,8 +1,12 @@
+""" Forms for the profile app """
 from django import forms
 from .models import UserProfile
 
+
 class UserProfileForm(forms.ModelForm):
+    """ Form for updating/adding a user's details """
     class Meta:
+        """ Metaclass for the userprofile and to exclude user field """
         model = UserProfile
         exclude = ('user',)
 
@@ -29,5 +33,5 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
+            self.fields[field].widget.attrs['class'] = 'border-black profile-form-input'
             self.fields[field].label = False
