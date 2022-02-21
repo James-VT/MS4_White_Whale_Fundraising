@@ -11,7 +11,7 @@ class DonationForm(forms.ModelForm):
         fields = ('title', 'first_name', 'last_name',
                   'email', 'phone_number', 'country',
                   'postcode', 'town_or_city', 'street_address1',
-                  'street_address2', 'county', 'gift_aid',)
+                  'street_address2', 'county',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -20,9 +20,10 @@ class DonationForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
+            'title': 'Title',
             'first_name': 'First Name',
             'last_name': 'Last Name',
-            'email': 'email_address',
+            'email': 'Email Address',
             'phone_number': 'Phone Number',
             'country': 'Country',
             'postcode': 'Postcode',
@@ -38,7 +39,7 @@ class DonationForm(forms.ModelForm):
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:
-                    placeholder = placeholder[field]
+                    placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
                 self.fields[field].widget.attrs['class'] = 'stripe-style-input'
                 self.fields[field].label = False

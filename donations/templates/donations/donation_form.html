@@ -93,7 +93,17 @@
 
                     <fieldset>
                         <legend>Details</legend>
+                        {{ donation_form.title | as_crispy_field }}
                         {{ donation_form.first_name | as_crispy_field }}
+                        {{ donation_form.last_name | as_crispy_field }}
+                        {{ donation_form.email | as_crispy_field }}
+                        {{ donation_form.phone_number | as_crispy_field }}
+                        {{ donation_form.country | as_crispy_field }}
+                        {{ donation_form.postcode | as_crispy_field }}
+                        {{ donation_form.town_or_city | as_crispy_field }}
+                        {{ donation_form.street_address1 | as_crispy_field }}
+                        {{ donation_form.street_address2 | as_crispy_field }}
+                        {{ donation_form.county | as_crispy_field }}
                     </fieldset>
 
                     <input type="submit" value="Submit" class="btn btn-success">

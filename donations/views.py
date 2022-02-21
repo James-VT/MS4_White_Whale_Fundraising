@@ -7,7 +7,8 @@ from .forms import DonationForm
 
 def donation_form(request):
     """ Donation form page """
-    return render(request, 'donations/donation_form.html')
+    form = DonationForm
+    return render(request, 'donations/donation_form.html', {'donation_form': form})
 
 
 def charge(request):
