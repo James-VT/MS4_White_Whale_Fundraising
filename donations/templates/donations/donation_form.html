@@ -26,6 +26,7 @@
                 <h4>Your donation will help keep endangered marine species alive for future generations. This is your gift to them.</h4>
                 <hr>
                 <form action="" method="POST" class="form-display" id="payment-form">
+                    {% csrf_token %}
                     <div>
                         <input type="radio" class="form-display" id="amount-5" name="amount" value="5">
                             <label for="amount-5">
@@ -85,8 +86,17 @@
                         <label for="amount">Other (enter amount):</label>
                         <input type="text" name="amount" id="amount-custom">
                     </div>
-
+                    
                     <div>
+                        <p>Please fill out the form below to complete your donation</p>
+                    </div>
+
+                    <fieldset>
+                        <legend>Details</legend>
+                        {{ donation_form.first_name | as_crispy_field }}
+                    </fieldset>
+
+                    <!-- <div>
                         <label for="title">Title *</label>
                         <select name="title form-select" required>
                             <option value="">Please select</option>
@@ -122,7 +132,7 @@
                     <div>
                         <label for="phone-number">Phone number</label>
                         <input type="text" name="phone-number" placeholder="Phone number">
-                    </div>
+                    </div> -->
 
                 </form>
             </div>

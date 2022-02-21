@@ -11,7 +11,7 @@ class DonationForm(forms.ModelForm):
         fields = ('title', 'first_name', 'last_name',
                   'email', 'phone_number', 'country',
                   'postcode', 'town_or_city', 'street_address1',
-                  'street_address2', 'county', 'date', 'gift_aid',)
+                  'street_address2', 'county', 'gift_aid',)
 
     def __init__(self, *args, **kwargs):
         """
