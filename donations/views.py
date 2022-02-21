@@ -1,7 +1,8 @@
 """ Views for our donation pages """
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.http import JsonResponse
+
+from .forms import DonationForm
 
 
 def donation_form(request):
