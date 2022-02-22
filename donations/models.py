@@ -1,6 +1,7 @@
 """ Models for the donation form """
 import uuid
 from django.db import models
+from django import forms
 from django_countries.fields import CountryField
 from django.conf import settings
 from profiles.models import UserProfile
@@ -27,7 +28,7 @@ class Donation(models.Model):
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    gift_aid = models.BooleanField(default=False)
+    gift_aid = models.BooleanField(widget=forms.Checkbox)
     donation_total = models.DecimalField(max_digits=10, decimal_places=2,
                                          null=False, default=0)
 
