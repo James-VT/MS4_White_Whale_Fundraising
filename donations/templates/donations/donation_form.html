@@ -93,6 +93,7 @@
 
                     <fieldset>
                         <legend>Details</legend>
+                        {{ donation_form.donation_selectors | as_crispy_field }}
                         {{ donation_form.title | as_crispy_field }}
                         {{ donation_form.first_name | as_crispy_field }}
                         {{ donation_form.last_name | as_crispy_field }}
