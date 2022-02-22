@@ -93,19 +93,26 @@
 
                     <fieldset>
                         <legend>Details</legend>
-                        {{ donation_form.donation_selectors | as_crispy_field }}
-                        {{ donation_form.title | as_crispy_field }}
-                        {{ donation_form.first_name | as_crispy_field }}
-                        {{ donation_form.last_name | as_crispy_field }}
-                        {{ donation_form.email | as_crispy_field }}
-                        {{ donation_form.phone_number | as_crispy_field }}
-                        {{ donation_form.country | as_crispy_field }}
-                        {{ donation_form.postcode | as_crispy_field }}
-                        {{ donation_form.town_or_city | as_crispy_field }}
-                        {{ donation_form.street_address1 | as_crispy_field }}
-                        {{ donation_form.street_address2 | as_crispy_field }}
-                        {{ donation_form.county | as_crispy_field }}
-                        {{ donation_form.gift_aid | as_crispy_field }}
+                        <div class="selectors-container">
+                            <strong>
+                                <br>
+                                <em>
+                                    {{ donation_form.donation_selectors | as_crispy_field }}
+                                </em>
+                        </div>
+                            {{ donation_form.title | as_crispy_field }}
+                            {{ donation_form.first_name | as_crispy_field }}
+                            {{ donation_form.last_name | as_crispy_field }}
+                            {{ donation_form.email | as_crispy_field }}
+                            {{ donation_form.phone_number | as_crispy_field }}
+                            {{ donation_form.country | as_crispy_field }}
+                            {{ donation_form.postcode | as_crispy_field }}
+                            {{ donation_form.town_or_city | as_crispy_field }}
+                            {{ donation_form.street_address1 | as_crispy_field }}
+                            {{ donation_form.street_address2 | as_crispy_field }}
+                            {{ donation_form.county | as_crispy_field }}
+                            {{ donation_form.gift_aid | as_crispy_field }}
+                        </strong>
                     </fieldset>
 
                     <input type="submit" value="Submit" class="btn btn-success">

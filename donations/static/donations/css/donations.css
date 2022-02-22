@@ -10,3 +10,10 @@
 .form-display {
     display: inline;
 }
+
+.selectors-container {
+    text-align: center;
+    float: right;
+    align-items: center;
+    margin-right: 50%;
+}
