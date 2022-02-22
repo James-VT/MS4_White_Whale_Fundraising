@@ -11,6 +11,8 @@ class DonationForm(forms.ModelForm):
     donation_selectors = forms.ChoiceField(choices=donation_values,
                                            widget=forms.RadioSelect)
 
+    donation_custom = forms.CharField()
+
     class Meta:
         """ Meta class for donation form """
         model = Donation
@@ -39,10 +41,13 @@ class DonationForm(forms.ModelForm):
             'county': 'County, State or Locality',
             'gift_aid': 'Gift Aid',
             'donation_selectors': 'Donation Selectors',
+            'donation_custom': 'Donation Custom'
         }
 
         self.fields['first_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
+            if field == 'donation_custom':
+                self.fields[field].widget.attrs['id'] = 'amount-custom'
             if field != 'country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'

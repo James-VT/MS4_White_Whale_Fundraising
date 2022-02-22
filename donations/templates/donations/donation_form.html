@@ -27,72 +27,12 @@
                 <hr>
                 <form action="" method="POST" class="form-display" id="payment-form">
                     {% csrf_token %}
-                    <div>
-                        <input type="radio" class="form-display" id="amount-5" name="amount" value="5">
-                            <label for="amount-5">
-                            <!-- <span>
-                                <span></span>
-                            </span> -->
-                            <em>
-                                <strong>£5</strong>
-                            </em>
-                            </label>
-                    </div>
-                    <div>
-                        <input type="radio" class="form-display" id="amount-10" name="amount" value="10">
-                            <label for="amount-10">
-                            <!-- <span>
-                                <span></span>
-                            </span> -->
-                            <em>
-                                <strong>£10</strong>
-                            </em>
-                            </label>
-                    </div>
-                    <div>
-                        <input type="radio" class="form-display" id="amount-15" name="amount" value="15">
-                            <label for="amount-15">
-                            <!-- <span>
-                                <span></span>
-                            </span> -->
-                            <em>
-                                <strong>£15</strong>
-                            </em>
-                            </label>
-                    </div>
-                    <div>
-                        <input type="radio" id="amount-25" name="amount" value="25">
-                            <label for="amount-25">
-                            <!-- <span>
-                                <span></span>
-                            </span> -->
-                            <em>
-                                <strong>£25</strong>
-                            </em>
-                            </label>
-                    </div>
-                    <div>
-                        <input type="radio" id="amount-50" name="amount" value="50">
-                            <label for="amount-50">
-                            <!-- <span>
-                                <span></span>
-                            </span> -->
-                            <em>
-                                <strong>£50</strong>
-                            </em>
-                            </label>
-                    </div>
-                    <div class="other" id="other-value">
-                        <label for="amount">Other (enter amount):</label>
-                        <input type="text" name="amount" id="amount-custom">
-                    </div>
                     
                     <div>
                         <p>Please fill out the form below to complete your donation</p>
                     </div>
 
                     <fieldset>
-                        <legend>Details</legend>
                         <div class="selectors-container">
                             <strong>
                                 <br>
@@ -100,6 +40,10 @@
                                     {{ donation_form.donation_selectors | as_crispy_field }}
                                 </em>
                         </div>
+                        <div>
+                            {{ donation_form.donation_custom | as_crispy_field }}
+                        </div>
+                        <legend>Details</legend>
                             {{ donation_form.title | as_crispy_field }}
                             {{ donation_form.first_name | as_crispy_field }}
                             {{ donation_form.last_name | as_crispy_field }}
