@@ -58,15 +58,19 @@ class Donation(models.Model):
             self.donation_number = self._generate_donation_number()
         super().save(*args, **kwargs)
 
-    def determine_total(self):
-        """
-        Determines whether a user has selected a preset amount to
-        donate or has entered a custom amount, and makes that the
-        total of the donation
-        """
-        for donation_selector in self.donation_selectors:
-            if donation_selector == True:
-                donation_total = donation_selector[value]
+    # def determine_total(self):
+    #     """
+    #     Determines whether a user has selected a preset amount to
+    #     donate or has entered a custom amount, and makes that the
+    #     total of the donation
+    #     """
+    #     if donation_selectors is True:
+    #         donation_total = donation_selectors.data.get(donation_selectors)
+    #     elif donation_custom is True:
+    #         donation_total = 
+
+    def __str__(self):
+        return self.donation_number
 
     # def update_total(self):
     #     """

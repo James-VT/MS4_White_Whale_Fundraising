@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from .forms import DonationForm
+from .models import Donation
 
 
 def donation_form(request):
@@ -11,10 +12,11 @@ def donation_form(request):
     return render(request, 'donations/donation_form.html', {'donation_form': form})
 
 
-def charge(request):
+def donate(request):
     """ View for taking payment """
-    amount = 0
+
     if request.method == 'POST':
+
         print('Data:', request.POST)
 
     return redirect(reverse('success', args=[amount]))
