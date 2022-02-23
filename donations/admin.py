@@ -6,7 +6,7 @@ from .models import Donation
 class DonationAdmin(admin.ModelAdmin):
     """ Class for the admin of donations """
     readonly_fields = ('donation_number', 'date',
-                       'donation_custom', 'donation_total',)
+                       'donation_total',)
 
     fields = ('donation_number', 'date', 'title', 'first_name',
               'last_name', 'email', 'phone_number', 'country',
