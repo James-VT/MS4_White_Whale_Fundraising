@@ -6,12 +6,10 @@ from .models import Donation
 class DonationForm(forms.ModelForm):
     """ Donation form class """
 
-    donation_values = (('5', '£5'), ('10', '£10'), ('15', '£15'),
-                       ('25', '£25'), ('50', '£50'))
-    donation_selectors = forms.ChoiceField(choices=donation_values,
-                                           widget=forms.RadioSelect)
+    # donation_selectors = forms.ChoiceField(choices=Donation.donation_values,
+    #                                        widget=forms.RadioSelect)
 
-    donation_custom = forms.CharField()
+    # donation_custom = forms.CharField()
 
     class Meta:
         """ Meta class for donation form """
@@ -19,7 +17,8 @@ class DonationForm(forms.ModelForm):
         fields = ('title', 'first_name', 'last_name',
                   'email', 'phone_number', 'country',
                   'postcode', 'town_or_city', 'street_address1',
-                  'street_address2', 'county', 'gift_aid',)
+                  'street_address2', 'county', 'gift_aid',
+                  'donation_selectors', 'donation_custom',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -43,8 +42,9 @@ class DonationForm(forms.ModelForm):
             'donation_selectors': 'Donation Selectors',
             'donation_custom': 'Donation Custom'
         }
-
+# widget=forms.RadioSelect,
         self.fields['first_name'].widget.attrs['autofocus'] = True
+        self.fields['donation_selectors'].widget = forms.RadioSelect(choices=Donation.donation_values)
         for field in self.fields:
             if field == 'donation_custom':
                 self.fields[field].widget.attrs['id'] = 'amount-custom'
@@ -53,8 +53,9 @@ class DonationForm(forms.ModelForm):
                     placeholder = f'{placeholders[field]} *'
                 else:
                     placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
-                self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+                if field != 'donation_selectors':
+                    self.fields[field].widget.attrs['placeholder'] = placeholder
+                    self.fields[field].widget.attrs['class'] = 'stripe-style-input'
                 if field != 'gift_aid':
                     self.fields[field].label = False
                 else:
