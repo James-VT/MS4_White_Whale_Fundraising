@@ -17,3 +17,8 @@
     align-items: center;
     margin-right: 50%;
 }
+
+.custom-input-label {
+    float: left;
+    margin-bottom: 0.5em;
+}
