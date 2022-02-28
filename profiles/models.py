@@ -12,6 +12,7 @@ class UserProfile(models.Model):
     User profile model for storing default contact info
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    default_title = models.CharField(max_length=24, null=True, blank=True)
     default_first_name = models.CharField(max_length=50, null=True, blank=True)
     default_last_name = models.CharField(max_length=50, null=True, blank=True)
     default_email = models.EmailField(max_length=254, null=True, blank=True)
