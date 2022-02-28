@@ -8,10 +8,6 @@ const detailsInfoButton = document.getElementById("details-info-button");
 
 const detailsInfo = document.getElementById("details-info");
 
-// detailsInfoButton.addEventListener("click", showDetailsExplanation);
-
-// giftAidExplanationButton.addEventListener("click", showGiftAidExplanation);
-
 amountCustom.addEventListener("click", uncheckRadio);
 
 function uncheckRadio() {
@@ -21,18 +17,6 @@ function uncheckRadio() {
         radio.checked = false;
     }
 }
-
-// function showGiftAidExplanation() {
-
-//     giftAidExplanationParagraph.classList.toggle("gift-aid-explanation-class");
-
-// }
-
-// function showDetailsExplanation() {
-    
-//     detailsInfo.classList.toggle("details-info-class");
-
-// }
 
 $('#details-info-button').click(function() {
     event.preventDefault();
