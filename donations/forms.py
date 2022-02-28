@@ -48,6 +48,7 @@ class DonationForm(forms.ModelForm):
         for field in self.fields:
             if field == 'donation_custom':
                 self.fields[field].widget.attrs['id'] = 'amount-custom'
+                self.fields[field].label = 'Enter your custom donation amount here'
             if field != 'country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'

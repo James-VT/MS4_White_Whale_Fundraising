@@ -23,10 +23,10 @@
     margin-bottom: 0.5em;
 }
 
-.details-info-class {
+#details-info {
     display: none;
 }
 
-.gift-aid-explanation-class {
+#gift-aid-explanation {
     display: none;
 }

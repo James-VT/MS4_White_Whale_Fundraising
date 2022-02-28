@@ -8,9 +8,9 @@ const detailsInfoButton = document.getElementById("details-info-button");
 
 const detailsInfo = document.getElementById("details-info");
 
-detailsInfoButton.addEventListener("click", showDetailsExplanation);
+// detailsInfoButton.addEventListener("click", showDetailsExplanation);
 
-giftAidExplanationButton.addEventListener("click", showGiftAidExplanation);
+// giftAidExplanationButton.addEventListener("click", showGiftAidExplanation);
 
 amountCustom.addEventListener("click", uncheckRadio);
 
@@ -22,14 +22,24 @@ function uncheckRadio() {
     }
 }
 
-function showGiftAidExplanation() {
+// function showGiftAidExplanation() {
 
-    giftAidExplanationParagraph.classList.toggle("gift-aid-explanation-class");
+//     giftAidExplanationParagraph.classList.toggle("gift-aid-explanation-class");
 
-}
+// }
 
-function showDetailsExplanation() {
+// function showDetailsExplanation() {
     
-    detailsInfo.classList.toggle("details-info-class");
+//     detailsInfo.classList.toggle("details-info-class");
 
-}
+// }
+
+$('#details-info-button').click(function() {
+    event.preventDefault();
+    $('#details-info').toggle('fast');
+});
+
+$('#gift-aid-info-button').click(function() {
+    event.preventDefault();
+    $('#gift-aid-explanation').toggle('fast');
+});
