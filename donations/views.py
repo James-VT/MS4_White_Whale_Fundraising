@@ -29,7 +29,14 @@ def donate(request):
             'county': request.POST['county']
         }
 
-        if donation_custom >= 1
+        if request.POST['donation_custom'] >= 1:
+            donation_total = request.POST['donation_custom']
+            'donation_total': donation_total
+        elif request.POST['donation_selectors'] >= 1:
+            donation_total = request.POST['donation_selectors']
+            'donation_total': donation_total
+        else:
+            return redirect(reverse())
 
         print('Data:', request.POST)
 
