@@ -38,10 +38,8 @@ class Donation(models.Model):
     donation_selectors = models.CharField(choices=donation_values,
                                           max_length=5,
                                           null=True, blank=True)
-    donation_custom = models.CharField(max_length=5,
-                                       null=True, blank=True)
-    donation_total = models.CharField(max_length=5,
-                                      null=False, default=0)
+    donation_custom = models.FloatField(null=True, blank=True)
+    donation_total = models.FloatField(null=False, default=0)
 
     def _generate_donation_number(self):
         """
