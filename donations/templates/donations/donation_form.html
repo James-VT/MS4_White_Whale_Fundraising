@@ -25,7 +25,12 @@
                 <h3>Donation form</h3>
                 <h4>Your donation will help keep endangered marine species alive for future generations. This is your gift to them.</h4>
                 <hr>
-                <form action="" method="POST" class="form-display" id="payment-form">
+                <form action="{% url 'donation_success' %}" method="POST" class="form-display" id="payment-form">
+                    <!-- 
+                        The action here should point to the donate or 'AddDonation' view.
+                        If you pass the form in as context to this rendered template, it will be available
+                        using Jinja { { form } }
+                     -->
                     {% csrf_token %}
                     
                     <div>

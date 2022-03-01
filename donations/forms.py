@@ -14,6 +14,9 @@ class DonationForm(forms.ModelForm):
     class Meta:
         """ Meta class for donation form """
         model = Donation
+        # all of these fields will be visible when you render
+        # the form in the template from the instantiated form:
+        # {{ form }}
         fields = ('title', 'first_name', 'last_name',
                   'email', 'phone_number', 'country',
                   'postcode', 'town_or_city', 'street_address1',
