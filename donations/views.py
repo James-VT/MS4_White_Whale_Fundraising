@@ -16,6 +16,18 @@ def donate(request):
     """ View for taking payment """
 
     if request.method == 'POST':
+        form_data = {
+            'title': request.POST['title'],
+            'first_name': request.POST['first_name'],
+            'last_name': request.POST['last_name'],
+            'phone_number': request.POST['phone_number'],
+            'email': request.POST['email'],
+            'postcode': request.POST['postcode'],
+            'town_or_city': request.POST['town_or_city'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+            'county': request.POST['county']
+        }
 
         print('Data:', request.POST)
 
