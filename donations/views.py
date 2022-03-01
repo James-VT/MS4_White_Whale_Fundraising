@@ -18,7 +18,7 @@ from .models import Donation
 # It might help you make sense of what's happening by giving it a name such as 'AddDonation'
 # It will be responsible for processing either POST (when form is submitted), or GET (when user
 # visits the page to see the form)
-def donate(request):
+def add_donation(request):
     """ View for taking payment """
 
     if request.method == 'POST':
@@ -43,11 +43,11 @@ def donate(request):
             'donation_total': donation_total,
         }
         # Instantiate the form and populate with above data using:
-        # form = DonationForm(form_data)
+        form = DonationForm(form_data)
         # Check that the form is valid using:
-        # if form.is_valid():
-            # donation = form.save()
-        
+        if form.is_valid():
+            donation = form.save()
+
         # ^^ this should be everything you need to save a donation
         # once the form is submitted. Add a return statement to send
         # user to another path etc.
@@ -57,13 +57,14 @@ def donate(request):
 
     # At this level, we're outside the POST block, so we can instantiate
     # a blank form using:
-    # form = DonationForm()
+    form = DonationForm()
 
     # ^^ Could then pass this form in as context to whatever we render. Then
     # in the template we'll have access to 'form', which can be rendered using:
     # {{ form }}
 
-    return redirect(reverse('success', args=[donation_total]))
+    return render(request, 'donations/donation_form.html')
+    # return redirect(reverse('success', args=[donation_total]))
     # ^^ this should be a return render of the donation_form template
 
 

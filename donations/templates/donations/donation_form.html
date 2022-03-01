@@ -25,7 +25,7 @@
                 <h3>Donation form</h3>
                 <h4>Your donation will help keep endangered marine species alive for future generations. This is your gift to them.</h4>
                 <hr>
-                <form action="{% url 'donation_success' %}" method="POST" class="form-display" id="payment-form">
+                <form action="{% url 'add_donation' %}" method="POST" class="form-display" id="payment-form">
                     <!-- 
                         The action here should point to the donate or 'AddDonation' view.
                         If you pass the form in as context to this rendered template, it will be available
@@ -45,7 +45,7 @@
                             <strong>
                                 <br>
                                 <em>
-                                    {{ donation_form.donation_selectors | as_crispy_field }}
+                                    {{ form.donation_selectors | as_crispy_field }}
                                 </em>
                             </strong>
                         </div>
@@ -53,22 +53,22 @@
                             Or enter an specific amount to donate:
                         </div>
                         <div>
-                            {{ donation_form.donation_custom | as_crispy_field }}
+                            {{ form.donation_custom | as_crispy_field }}
                         </div>
                         <strong>
                             <legend>Details</legend>
-                            {{ donation_form.title | as_crispy_field }}
-                            {{ donation_form.first_name | as_crispy_field }}
-                            {{ donation_form.last_name | as_crispy_field }}
-                            {{ donation_form.email | as_crispy_field }}
-                            {{ donation_form.phone_number | as_crispy_field }}
-                            {{ donation_form.country | as_crispy_field }}
-                            {{ donation_form.postcode | as_crispy_field }}
-                            {{ donation_form.town_or_city | as_crispy_field }}
-                            {{ donation_form.street_address1 | as_crispy_field }}
-                            {{ donation_form.street_address2 | as_crispy_field }}
-                            {{ donation_form.county | as_crispy_field }}
-                            {{ donation_form.gift_aid | as_crispy_field }}
+                            {{ form.title | as_crispy_field }}
+                            {{ form.first_name | as_crispy_field }}
+                            {{ form.last_name | as_crispy_field }}
+                            {{ form.email | as_crispy_field }}
+                            {{ form.phone_number | as_crispy_field }}
+                            {{ form.country | as_crispy_field }}
+                            {{ form.postcode | as_crispy_field }}
+                            {{ form.town_or_city | as_crispy_field }}
+                            {{ form.street_address1 | as_crispy_field }}
+                            {{ form.street_address2 | as_crispy_field }}
+                            {{ form.county | as_crispy_field }}
+                            {{ form.gift_aid | as_crispy_field }}
                         </strong>
                         <div>
                             <a href="#" id="details-info-button">Why do we need all these details?</a>
