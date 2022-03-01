@@ -63,7 +63,7 @@ def add_donation(request):
     # in the template we'll have access to 'form', which can be rendered using:
     # {{ form }}
 
-    return render(request, 'donations/donation_form.html')
+    return render(request, 'donations/donation_form.html', {'form': form})
     # return redirect(reverse('success', args=[donation_total]))
     # ^^ this should be a return render of the donation_form template
 
