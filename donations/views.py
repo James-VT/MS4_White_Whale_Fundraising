@@ -29,6 +29,8 @@ def donate(request):
             'county': request.POST['county']
         }
 
+        if donation_custom >= 1
+
         print('Data:', request.POST)
 
     return redirect(reverse('success', args=[amount]))
