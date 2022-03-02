@@ -1,7 +1,7 @@
 """ Views for our donation pages """
 from django.shortcuts import render, redirect
 from django.urls import reverse
-
+from django.contrib import messages
 from .forms import DonationForm
 from .models import Donation
 
