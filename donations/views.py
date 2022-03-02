@@ -19,7 +19,7 @@ from .models import Donation
 # It will be responsible for processing either POST (when form is submitted), or GET (when user
 # visits the page to see the form)
 def add_donation(request):
-    """ View for taking payment """
+    """ View for taking payment and saving the donation to the database """
 
     if request.method == 'POST':
         # So this is what the view should do when form is submitted (POSTed)
@@ -40,6 +40,7 @@ def add_donation(request):
             print(type(donation_selectors))
             donation_total = int(request.POST['donation_selectors'])
             print(donation_total)
+            print(type(donation_total))
         # form_data is what we can use to populate an instance of the DonationForm
         form_data = {
             'title': request.POST['title'],
