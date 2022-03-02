@@ -23,17 +23,23 @@ def add_donation(request):
 
     if request.method == 'POST':
         # So this is what the view should do when form is submitted (POSTed)
-        donation_custom = int(request.POST['donation_custom'])
+        # donation_custom = int(request.POST['donation_custom'])
         # donation_selectors = request.POST['donation_selectors']
-        print(donation_custom)
-        print(type(donation_custom))
+        # print(donation_custom)
+        # print(type(donation_custom))
         # print(donation_selectors)
-        if int(request.POST['donation_custom']) >= 1.0:
-            
-            donation_total = request.POST['donation_custom']
-        elif request.POST[int(float('donation_selectors'))] >= 1:
-            
-            donation_total = request.POST['donation_selectors']
+        if request.POST['donation_custom'] != '':
+            donation_custom = request.POST['donation_custom']
+            print(donation_custom)
+            print(type(donation_custom))
+            donation_total = int(request.POST['donation_custom'])
+            print(donation_total)
+        if request.POST['donation_selectors'] != '':
+            donation_selectors = request.POST['donation_selectors']
+            print(donation_selectors)
+            print(type(donation_selectors))
+            donation_total = int(request.POST['donation_selectors'])
+            print(donation_total)
         # form_data is what we can use to populate an instance of the DonationForm
         form_data = {
             'title': request.POST['title'],
