@@ -53,6 +53,8 @@ def add_donation(request):
         # Check that the form is valid using:
         if form.is_valid():
             form.save()
+        else:
+            print('Not valid')
 
         # ^^ this should be everything you need to save a donation
         # once the form is submitted. Add a return statement to send
