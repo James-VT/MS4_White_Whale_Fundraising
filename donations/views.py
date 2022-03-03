@@ -32,13 +32,15 @@ def add_donation(request):
             donation_custom = request.POST['donation_custom']
             print(donation_custom)
             print(type(donation_custom))
-            donation_total = int(request.POST['donation_custom'])
+            donation_total = float(request.POST['donation_custom'])
             print(donation_total)
-        if request.POST['donation_selectors'] != '':
+            print(type(donation_total))
+        donation_selectors = request.POST.get('donation_selectors', False)
+        if donation_selectors:
             donation_selectors = request.POST['donation_selectors']
             print(donation_selectors)
             print(type(donation_selectors))
-            donation_total = int(request.POST['donation_selectors'])
+            donation_total = float(request.POST['donation_selectors'])
             print(donation_total)
             print(type(donation_total))
         # form_data is what we can use to populate an instance of the DonationForm
@@ -53,6 +55,7 @@ def add_donation(request):
             'street_address1': request.POST['street_address1'],
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
+            'country': request.POST['country'],
             'donation_total': donation_total,
         }
         # Instantiate the form and populate with above data using:
@@ -62,6 +65,7 @@ def add_donation(request):
             form.save()
         else:
             print('Not valid')
+            print(form.errors)
             messages.error(request, 'Your donation failed')
 
         # ^^ this should be everything you need to save a donation
