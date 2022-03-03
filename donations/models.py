@@ -35,17 +35,29 @@ class Donation(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     gift_aid = models.BooleanField(default=False)
-    donation_selectors = models.CharField(choices=donation_values,
-                                          max_length=5,
-                                          null=True, blank=True)
-    donation_custom = models.FloatField(null=True, blank=True)
-    donation_total = models.FloatField(null=False, default=0)
+    donation_selectors = models.DecimalField(choices=donation_values,
+                                             max_digits=6, decimal_places=2,
+                                             null=True, blank=True)
+    donation_custom = models.DecimalField(null=True, blank=True,
+                                          max_digits=6, decimal_places=2)
+    donation_total = models.DecimalField(null=False, default=0,
+                                         max_digits=6, decimal_places=2)
 
     def _generate_donation_number(self):
         """
         Generate a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
+
+    def calculate_donation_total(self):
+        """
+        Calculate the donation total from the choice of donation
+        radios or custom amount
+        """
+        if self.donation_custom != '':
+            self.donation_total = self.donation_custom
+        if self.donation_selectors != '':
+            self.donation_total = self.donation_selectors
 
     def save(self, *args, **kwargs):
         """
