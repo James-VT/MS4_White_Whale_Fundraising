@@ -35,9 +35,9 @@ class Donation(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     gift_aid = models.BooleanField(default=False)
-    donation_selectors = models.DecimalField(choices=donation_values,
-                                             max_digits=6, decimal_places=2,
-                                             null=True, blank=True)
+    donation_selectors = models.CharField(choices=donation_values,
+                                          max_length=6,
+                                          null=True, blank=True)
     donation_custom = models.DecimalField(null=True, blank=True,
                                           max_digits=6, decimal_places=2)
     donation_total = models.DecimalField(null=False, default=0,
@@ -56,8 +56,12 @@ class Donation(models.Model):
         """
         if self.donation_custom != '':
             self.donation_total = self.donation_custom
+            print(self.donation_total)
         if self.donation_selectors != '':
-            self.donation_total = self.donation_selectors
+            self.donation_total = float(self.donation_selectors)
+            print(self.donation_total)
+        print(self.donation_total)
+        self.save()
 
     def save(self, *args, **kwargs):
         """

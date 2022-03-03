@@ -28,21 +28,21 @@ def add_donation(request):
         # print(donation_custom)
         # print(type(donation_custom))
         # print(donation_selectors)
-        if request.POST['donation_custom'] != '':
-            donation_custom = request.POST['donation_custom']
-            print(donation_custom)
-            print(type(donation_custom))
-            donation_total = float(request.POST['donation_custom'])
-            print(donation_total)
-            print(type(donation_total))
-        donation_selectors = request.POST.get('donation_selectors', False)
-        if donation_selectors:
-            donation_selectors = request.POST['donation_selectors']
-            print(donation_selectors)
-            print(type(donation_selectors))
-            donation_total = float(request.POST['donation_selectors'])
-            print(donation_total)
-            print(type(donation_total))
+        # if request.POST['donation_custom'] != '':
+        #     donation_custom = request.POST['donation_custom']
+        #     print(donation_custom)
+        #     print(type(donation_custom))
+        #     donation_total = float(request.POST['donation_custom'])
+        #     print(donation_total)
+        #     print(type(donation_total))
+        donation_selectors = request.POST.get('donation_selectors', '')
+        # if donation_selectors:
+        #     donation_selectors = request.POST['donation_selectors']
+        #     print(donation_selectors)
+        #     print(type(donation_selectors))
+        #     donation_total = float(request.POST['donation_selectors'])
+        #     print(donation_total)
+        #     print(type(donation_total))
         # form_data is what we can use to populate an instance of the DonationForm
         form_data = {
             'title': request.POST['title'],
@@ -57,9 +57,9 @@ def add_donation(request):
             'county': request.POST['county'],
             'country': request.POST['country'],
             'gift_aid': request.POST['gift_aid'],
-            'donation_selectors': request.POST['donation_selectors'],
+            'donation_selectors': donation_selectors,
             'donation_custom': request.POST['donation_custom'],
-            'donation_total': donation_total,
+            # 'donation_total': donation_total,
         }
         # Instantiate the form and populate with above data using:
         form = DonationForm(form_data)
