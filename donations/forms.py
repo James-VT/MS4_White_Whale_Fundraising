@@ -21,7 +21,7 @@ class DonationForm(forms.ModelForm):
                   'email', 'phone_number', 'country',
                   'postcode', 'town_or_city', 'street_address1',
                   'street_address2', 'county', 'gift_aid',
-                  'donation_selectors', 'donation_custom',)
+                  'donation_total',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -42,22 +42,21 @@ class DonationForm(forms.ModelForm):
             'street_address2': 'Street Address 2',
             'county': 'County, State or Locality',
             'gift_aid': 'Gift Aid',
-            'donation_selectors': 'Donation Selectors',
-            'donation_custom': 'Donation Custom'
+            'donation_total': 'Donation'
         }
 # widget=forms.RadioSelect,
         self.fields['first_name'].widget.attrs['autofocus'] = True
-        self.fields['donation_selectors'].widget = forms.RadioSelect(choices=Donation.donation_values)
+        self.fields['donation_total'].widget = forms.RadioSelect(choices=Donation.donation_values)
         for field in self.fields:
-            if field == 'donation_custom':
-                self.fields[field].widget.attrs['id'] = 'amount-custom'
-                self.fields[field].label = 'Enter your custom donation amount here'
+            # if field == 'donation_custom':
+            #     self.fields[field].widget.attrs['id'] = 'amount-custom'
+            #     self.fields[field].label = 'Enter your custom donation amount here'
             if field != 'country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:
                     placeholder = placeholders[field]
-                if field != 'donation_selectors':
+                if field != 'donation_total':
                     self.fields[field].widget.attrs['placeholder'] = placeholder
                     self.fields[field].widget.attrs['class'] = 'stripe-style-input'
                 if field != 'gift_aid':

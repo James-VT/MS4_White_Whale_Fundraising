@@ -12,8 +12,8 @@ from profiles.models import UserProfile
 class Donation(models.Model):
     """ Class for handling donations """
 
-    donation_values = (('5', '£5'), ('10', '£10'), ('15', '£15'),
-                       ('25', '£25'), ('50', '£50'))
+    donation_values = (('5', '5'), ('10', '10'), ('15', '15'),
+                       ('25', '25'), ('30', '30'))
 
     donation_number = models.CharField(max_length=32,
                                        null=False, editable=False)
@@ -35,13 +35,13 @@ class Donation(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     gift_aid = models.BooleanField(default=False)
-    donation_selectors = models.CharField(choices=donation_values,
-                                          max_length=6,
-                                          null=True, blank=True)
-    donation_custom = models.DecimalField(null=True, blank=True,
-                                          max_digits=6, decimal_places=2)
-    donation_total = models.DecimalField(null=False, default=0,
-                                         max_digits=6, decimal_places=2)
+    donation_total = models.DecimalField(choices=donation_values,
+                                         max_digits=5, decimal_places=2,
+                                         null=False, blank=False)
+    # donation_custom = models.DecimalField(null=True, blank=True,
+    #                                       max_digits=6, decimal_places=2)
+    # donation_total = models.DecimalField(null=False, default=0,
+    #                                      max_digits=6, decimal_places=2)
 
     def _generate_donation_number(self):
         """
@@ -49,19 +49,19 @@ class Donation(models.Model):
         """
         return uuid.uuid4().hex.upper()
 
-    def calculate_donation_total(self):
-        """
-        Calculate the donation total from the choice of donation
-        radios or custom amount
-        """
-        if self.donation_custom != '':
-            self.donation_total = self.donation_custom
-            print(self.donation_total)
-        if self.donation_selectors != '':
-            self.donation_total = float(self.donation_selectors)
-            print(self.donation_total)
-        print(self.donation_total)
-        self.save()
+    # def calculate_donation_total(self):
+    #     """
+    #     Calculate the donation total from the choice of donation
+    #     radios or custom amount
+    #     """
+    #     if self.donation_custom != '':
+    #         self.donation_total = self.donation_custom
+    #         print(self.donation_total)
+    #     if self.donation_selectors != '':
+    #         self.donation_total = float(self.donation_selectors)
+    #         print(self.donation_total)
+    #     print(self.donation_total)
+    #     self.save()
 
     def save(self, *args, **kwargs):
         """
