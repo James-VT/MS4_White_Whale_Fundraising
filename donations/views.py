@@ -60,7 +60,7 @@ def add_donation(request):
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
             'country': request.POST['country'],
-            'gift_aid': request.POST['gift_aid'],
+            'gift_aid': request.POST.get('gift_aid', False),
             'donation_total': request.POST['donation_total']
         }
         # Instantiate the form and populate with above data using:

@@ -6,7 +6,19 @@ Here I will document the testing processes and bugs I encountered during the pro
 
 ### Passing information through to the database
 
+Before linking Stripe to the project to take payments, I wanted to test that information was passing through properly to the database and that donation forms were being saved correctly. I had experienced a lot of problems building the form, so this was an important step.
 
+I filled out the form with info:
+
+![Image of form filled with info](assets/testing/donationformtesting/filledform1.png)
+
+Then, upon clicking submit, I checked to see whether this had appeared in the database:
+
+![Image of donation entry in database](assets/testing/donationformtesting/donationindatabase1.png)
+
+Success! It had done so. As an aside, I had used a couple of print statements in the view as part of the bugfixing process and the results can be seen here:
+
+![Image of the console prints](assets/testing/donationformtesting/consoleprintdonation1.png)
 
 # Bugs
 
