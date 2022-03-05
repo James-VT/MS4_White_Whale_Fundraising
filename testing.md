@@ -2,6 +2,12 @@
 
 Here I will document the testing processes and bugs I encountered during the production of this project
 
+## Donation form
+
+### Passing information through to the database
+
+
+
 # Bugs
 
 ## Membership Level Bug
@@ -91,3 +97,8 @@ function uncheckRadio() {
 ```
 
 This works with no console errors. Success!
+
+NOTE: All of this was later removed as crispy forms proved unsuitable to the task of pairing radio options' values with labels that were at once user-friendly and database-friendly. There was also an issue with the donation total field not accurately gathering user input from one or the other input field. As tutor support was unable to help with these issues, I was forced to take a different approach and use a drop-down menu for pre-set amounts instead. I leave this section here to demonstrate work done and learning; in the future I would like to revisit this project and have another go at implementing these things.
+
+---
+
