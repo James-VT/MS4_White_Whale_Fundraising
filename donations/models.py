@@ -19,7 +19,7 @@ class Donation(models.Model):
                                        null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
-                                     related_name='orders')
+                                     related_name='donations')
     title = models.CharField(max_length=32, null=False, blank=False,
                              default="")
     first_name = models.CharField(max_length=50, null=False, blank=False)

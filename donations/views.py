@@ -2,11 +2,11 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib import messages
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
+
 from .forms import DonationForm
 from .models import Donation
-
-from profiles.models import UserProfile
-from profiles.models import UserProfileForm
 
 
 # This view appears unnecessary and doesn't have enough in it to
@@ -89,7 +89,7 @@ def add_donation(request):
     # a blank form using:
     if request.user.is_authenticated:
         try:
-            profile = UserProfile.object.get(user=request.user)
+            profile = UserProfile.objects.get(user=request.user)
             donation_form = DonationForm(initial={
                 'title': profile.user.default_title,
                 'first_name': profile.user.default_first_name,
