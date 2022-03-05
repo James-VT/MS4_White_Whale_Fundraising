@@ -5,6 +5,9 @@ from django.contrib import messages
 from .forms import DonationForm
 from .models import Donation
 
+from profiles.models import UserProfile
+from profiles.models import UserProfileForm
+
 
 # This view appears unnecessary and doesn't have enough in it to
 # successfully store info in the DB
@@ -68,6 +71,8 @@ def add_donation(request):
         # Check that the form is valid using:
         if form.is_valid():
             form.save()
+            # Save user's info to their profile if it's all good here
+            # request.session['save_info] = 'save-info' in request.POST
         else:
             print('Not valid')
             print(form.errors)
@@ -82,7 +87,25 @@ def add_donation(request):
 
     # At this level, we're outside the POST block, so we can instantiate
     # a blank form using:
-    form = DonationForm()
+    if request.user.is_authenticated:
+        try:
+            profile = UserProfile.object.get(user=request.user)
+            donation_form = DonationForm(initial={
+                'title': profile.user.default_title,
+                'first_name': profile.user.default_first_name,
+                'last_name': profile.user.default_last_name,
+                'email': profile.user.default_email,
+                'phone_number': profile.user.default_phone_number,
+                'street_address1': profile.user.default_street_address1,
+                'street_address2': profile.user.default_street_address2,
+                'county': profile.default_county,
+                'country': profile.user.default_country,
+                'town_or_city': profile.user.default_town_or_city,
+            })
+        except UserProfile.DoesNotExist:
+            form = DonationForm()
+    else:
+        form = DonationForm()
 
     # ^^ Could then pass this form in as context to whatever we render. Then
     # in the template we'll have access to 'form', which can be rendered using:
