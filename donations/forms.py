@@ -46,7 +46,13 @@ class DonationForm(forms.ModelForm):
         }
 # widget=forms.RadioSelect,
         self.fields['first_name'].widget.attrs['autofocus'] = True
-        self.fields['donation_total'].widget = forms.RadioSelect(choices=Donation.donation_values)
+        # self.fields['donation_total'].widget = forms.RadioSelect(choices=Donation.donation_values)
+        self.fields['donation_total'].label = [0]
+        # pound_sign = '£'
+        # donation_total = 'donation_total'
+        # for donation_label in donation_total:
+        #     self.fields['donation_total'].label = pound_sign + donation_label
+        # self.fields['donation_total'].label = f'£{Donation.donation_values}'
         for field in self.fields:
             # if field == 'donation_custom':
             #     self.fields[field].widget.attrs['id'] = 'amount-custom'

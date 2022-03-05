@@ -39,21 +39,21 @@
 
                     <fieldset>
                         <p>
-                            You can either select an amount to donate:
+                            Please select an amount to donate:
                         </p>
                         <div class="selectors-container">
                             <strong>
                                 <br>
                                 <em>
-                                    {{ form.donation_selectors | as_crispy_field }}
+                                    <select name="donation_total" class="dropdown_style">
+                                        <option selected class="text-center" value="5">£5</option>
+                                        <option class="text-center" value="10">£10</option>
+                                        <option class="text-center" value="15">£15</option>
+                                        <option class="text-center" value="20">£20</option>
+                                        <option class="text-center" value="30">£30</option>
+                                    </select>
                                 </em>
                             </strong>
-                        </div>
-                        <div class="custom-input-label">
-                            Or enter an specific amount to donate:
-                        </div>
-                        <div>
-                            {{ form.donation_custom | as_crispy_field }}
                         </div>
                         <strong>
                             <legend>Details</legend>

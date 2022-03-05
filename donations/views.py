@@ -44,6 +44,10 @@ def add_donation(request):
         #     print(donation_total)
         #     print(type(donation_total))
         # form_data is what we can use to populate an instance of the DonationForm
+        # donation_total_uncleaned = request.POST['donation_total']
+        # donation_total = donation_total_uncleaned[1:]
+        # donation_value = request.POST['donation_total'][1]
+        # print(donation_value)
         form_data = {
             'title': request.POST['title'],
             'first_name': request.POST['first_name'],
@@ -57,7 +61,7 @@ def add_donation(request):
             'county': request.POST['county'],
             'country': request.POST['country'],
             'gift_aid': request.POST['gift_aid'],
-            'donation_total': request.POST['donation_total'],
+            'donation_total': request.POST['donation_total']
         }
         # Instantiate the form and populate with above data using:
         form = DonationForm(form_data)

@@ -12,8 +12,8 @@ from profiles.models import UserProfile
 class Donation(models.Model):
     """ Class for handling donations """
 
-    donation_values = (('5', '5'), ('10', '10'), ('15', '15'),
-                       ('25', '25'), ('30', '30'))
+    # donation_values = (('£5', '5'), ('£10', '10'), ('£15', '15'),
+    #                    ('£25', '25'), ('£30', '30'))
 
     donation_number = models.CharField(max_length=32,
                                        null=False, editable=False)
@@ -35,9 +35,8 @@ class Donation(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     gift_aid = models.BooleanField(default=False)
-    donation_total = models.DecimalField(choices=donation_values,
-                                         max_digits=5, decimal_places=2,
-                                         null=False, blank=False)
+    donation_total = models.CharField(max_length=6,
+                                      null=False, blank=False)
     # donation_custom = models.DecimalField(null=True, blank=True,
     #                                       max_digits=6, decimal_places=2)
     # donation_total = models.DecimalField(null=False, default=0,
