@@ -90,7 +90,7 @@ def add_donation(request):
     if request.user.is_authenticated:
         try:
             profile = UserProfile.objects.get(user=request.user)
-            donation_form = DonationForm(initial={
+            form = DonationForm(initial={
                 'title': profile.user.default_title,
                 'first_name': profile.user.default_first_name,
                 'last_name': profile.user.default_last_name,
