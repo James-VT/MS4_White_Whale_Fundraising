@@ -1,6 +1,5 @@
 """ Views for our donation pages """
-from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.shortcuts import (render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.contrib import messages
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
@@ -70,9 +69,13 @@ def add_donation(request):
         form = DonationForm(form_data)
         # Check that the form is valid using:
         if form.is_valid():
+            donation = form.save(commit=False)
             form.save()
             # Save user's info to their profile if it's all good here
-            # request.session['save_info] = 'save-info' in request.POST
+            request.session['save_info'] = 'save-info' in request.POST
+            print(form_data)
+            print('Data:', request.POST)
+            return redirect(reverse('donation_success', args=[donation.donation_number]))
         else:
             print('Not valid')
             print(form.errors)
@@ -81,9 +84,6 @@ def add_donation(request):
         # ^^ this should be everything you need to save a donation
         # once the form is submitted. Add a return statement to send
         # user to another path etc.
-        print(form_data)
-
-        print('Data:', request.POST)
 
     # At this level, we're outside the POST block, so we can instantiate
     # a blank form using:
@@ -123,10 +123,12 @@ def donation_success(request, donation_number):
     Handles successful donations
     """
     save_info = request.session.get('save_info')
+    print(save_info)
     donation = get_object_or_404(Donation, donation_number=donation_number)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
+        print(profile)
         # Attaches the user's profile to the donation
         donation.user_profile = profile
         donation.save()
@@ -134,6 +136,10 @@ def donation_success(request, donation_number):
         # Save the user's submitted info
         if save_info:
             profile_data = {
+                'default_title': donation.title,
+                'default_first_name': donation.first_name,
+                'default_last_name': donation.last_name,
+                'default_email': donation.email,
                 'default_phone_number': donation.phone_number,
                 'default_country': donation.country,
                 'default_postcode': donation.postcode,

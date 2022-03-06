@@ -2,9 +2,11 @@
 
 Here I will document the testing processes and bugs I encountered during the production of this project
 
+# Feature testing
+
 ## Donation form
 
-### Passing information through to the database
+### Donation form - Passing information through to the database
 
 Before linking Stripe to the project to take payments, I wanted to test that information was passing through properly to the database and that donation forms were being saved correctly. I had experienced a lot of problems building the form, so this was an important step.
 
@@ -19,6 +21,36 @@ Then, upon clicking submit, I checked to see whether this had appeared in the da
 Success! It had done so. As an aside, I had used a couple of print statements in the view as part of the bugfixing process and the results can be seen here:
 
 ![Image of the console prints](assets/testing/donationformtesting/consoleprintdonation1.png)
+
+### Donation form - Auto-filling data from the user profile to the donation form
+
+As a logged-in user, information should be able to be saved to the user profile and auto-filled to the donation form from there. To test that this worked, I created a new user and entered the details info the relevant fields on the user profile page.
+
+![Image of the profile information with completed fields](assets/testing/donationformtesting/userprofiledefaultdata.png)
+
+Then I navigated to the donation form to see whether the information was appearing there as expected.
+
+![Image of the donation form with the data auto-filled from the profile form](assets/testing/donationformtesting/defaultdataautofilled.png)
+
+Success! The data carried through correctly.
+
+### Donation form - Saving data from the donation form to the user profile.
+
+A setting on the donation form allows a user whether to choose to update their default profile information with the information they enter into the form. If this option is selected, then any information on the form should carry through to - or overwrite - the relevant fields in their profile. To test that this worked, I used the same user as above - "Nosir" - and made another donation, this time changing certain fields.
+
+Here is the profile information as it was:
+
+![Image of the profile information before the donation](assets/testing/donationformtesting/userprofiledefaultdata.png)
+
+I then navigated to the donation form and entered new information there:
+
+![Image of donation form with new information and save_info box ticked](assets/testing/donationformtesting/donationformnewinfo.png)
+
+The save_info box was checked, meaning the information should be saved to the profile. I then navigated to the profile to make sure:
+
+![Image of new info in profile](assets/testing/donationformtesting/updatedprofileinfo.png)
+
+Success! The data was saved correctly to the user profile.
 
 # Bugs
 
