@@ -23,7 +23,7 @@ def profile(request):
                            'Update failed. Please ensure the form is valid')
     else:
         form = UserProfileForm(instance=profile)
-        donations = profile.donations.all()
+    donations = profile.donations.all()
 
     template = 'profiles/profile.html'
     context = {
