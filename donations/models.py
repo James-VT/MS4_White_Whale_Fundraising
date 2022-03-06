@@ -44,7 +44,7 @@ class Donation(models.Model):
 
     def _generate_donation_number(self):
         """
-        Generate a random, unique order number using UUID
+        Generate a random, unique donation number using UUID
         """
         return uuid.uuid4().hex.upper()
 
@@ -64,7 +64,7 @@ class Donation(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Overrides the original save method to set the order number
+        Overrides the original save method to set the donation number
         if it hasn't been set already - nice failsafe
         """
         if not self.donation_number:

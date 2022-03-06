@@ -90,17 +90,19 @@ def add_donation(request):
     if request.user.is_authenticated:
         try:
             profile = UserProfile.objects.get(user=request.user)
+            
             form = DonationForm(initial={
-                'title': profile.user.default_title,
-                'first_name': profile.user.default_first_name,
-                'last_name': profile.user.default_last_name,
-                'email': profile.user.default_email,
-                'phone_number': profile.user.default_phone_number,
-                'street_address1': profile.user.default_street_address1,
-                'street_address2': profile.user.default_street_address2,
+                'title': profile.default_title,
+                'first_name': profile.default_first_name,
+                'last_name': profile.default_last_name,
+                'email': profile.default_email,
+                'phone_number': profile.default_phone_number,
+                'street_address1': profile.default_street_address1,
+                'street_address2': profile.default_street_address2,
                 'county': profile.default_county,
-                'country': profile.user.default_country,
-                'town_or_city': profile.user.default_town_or_city,
+                'country': profile.default_country,
+                'town_or_city': profile.default_town_or_city,
+                'postcode': profile.default_postcode,
             })
         except UserProfile.DoesNotExist:
             form = DonationForm()
