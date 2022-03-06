@@ -13,7 +13,7 @@ class DonationAdmin(admin.ModelAdmin):
               'postcode', 'town_or_city', 'street_address1',
               'street_address2', 'county', 'gift_aid', 'donation_total',)
 
-    list_display = ('donation_number', 'user_profile', 'date', 'title',
+    list_display = ('donation_number', 'date', 'title',
                     'first_name', 'last_name', 'gift_aid', 'donation_total',)
 
     ordering = ('-date',)

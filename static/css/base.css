@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Righteous&family=Roboto&display=swap');
 
 html {
     height: 100%;
@@ -13,7 +13,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Righteous', cursive;
 }
 
 button {
