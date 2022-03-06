@@ -118,7 +118,41 @@ def add_donation(request):
     # ^^ this should be a return render of the donation_form template
 
 
-def success_msg(request, args):
-    """ Success page """
-    amount = args
-    return render(request, 'donations/donation_success.html', {'amount': amount})
+def donation_success(request, donation_number):
+    """
+    Handles successful donations
+    """
+    save_info = request.session.get('save_info')
+    donation = get_object_or_404(Donation, donation_number=donation_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attaches the user's profile to the donation
+        donation.user_profile = profile
+        donation.save()
+
+        # Save the user's submitted info
+        if save_info:
+            profile_data = {
+                'default_phone_number': donation.phone_number,
+                'default_country': donation.country,
+                'default_postcode': donation.postcode,
+                'default_town_or_city': donation.town_or_city,
+                'default_street_address1': donation.street_address1,
+                'default_street_address2': donation.street_address2,
+                'default_county': donation.county,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
+    messages.success(request, f'Donation successfully processed! \
+        Your donation number is {donation_number}. A confirmation \
+        email will be sent to {donation.email}.')
+
+    template = 'donations/donation_success.html'
+    context = {
+        'donation': donation,
+    }
+
+    return render(request, template, context)
