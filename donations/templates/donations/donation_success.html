@@ -16,5 +16,12 @@
 		<hr>
 		<a class="" href="{% url 'home' %}">Home</a>
 	</div>
+	<div>
+		{% if from_profile %}
+			<a href="{% url 'profile' %}" class="return-to-profile">
+				Return to profile
+			</a>
+		{% endif %}
+	</div>
 
 {% endblock content %}
