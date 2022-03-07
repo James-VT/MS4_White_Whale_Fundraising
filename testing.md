@@ -52,6 +52,14 @@ The save_info box was checked, meaning the information should be saved to the pr
 
 Success! The data was saved correctly to the user profile.
 
+| User story goal met by this feature | How was this achieved? |
+| --- | --- |
+| Donate money to the charity | The site's donation form takes donations from users |
+| Generate revenue via donations | The donation form on the site allows users to donate money to the organisation |
+| Have their bank details used only in a secure way, such as that provided by the use of Stripe | Stripe handles payments from users and guarantees the secure handling of payment details so that these do not need to be stored anywhere in the site's code or the administration |
+
+---
+
 # Bugs
 
 ## Membership Level Bug

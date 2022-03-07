@@ -14,19 +14,19 @@ This site is built to serve as a full-stack ecommerce site for a charitable orga
 1. Learn about the charity, its goals and its work.
 2. Donate money to the charity.
 3. Register an account on the site.
-4. Become a member of the charity by submitting their details and subscribing with a monthly or annual donation.
+4. Become a member of the charity by subscribing with a monthly or annual donation.
 5. Have their bank details used only in a secure way, such as that provided by the use of Stripe.
-6. Sponsor fundraisers and fundraising activities.
+6. Learn about fundraisers and fundraising activities on the blog.
 7. Leave comments for fundraisers and fundraising activities, such as messages of encouragement.
 8. Edit or delete their own comments.
 
 ### A site owner will want to:
 9. Explain to users who they are, what they do and how they can help as soon as a user lands on the home page.
-10. Generate revenue via one-off donations.
+10. Generate revenue via donations.
 11. Grow their member base by encouraging users to become new members.
 12. Raise awareness of upcoming fundraising events.
-13. Generate sponsorships of upcoming fundraising events.
-14. Encourage interaction with users by allowing registered users to leave a message of encouragement along with their sponsorship.
+13. Host a blog.
+14. Encourage interaction with users by allowing registered users to leave a comment.
 15. Add upcoming fundraising events to the site for users to see.
 
 # Credits
