@@ -65,7 +65,7 @@ class DonationForm(forms.ModelForm):
                 if field != 'donation_total':
                     self.fields[field].widget.attrs['placeholder'] = placeholder
                     self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-                if field != 'gift_aid':
-                    self.fields[field].label = False
-                else:
-                    self.fields[field].label = 'Yes, I would like to Gift Aid my donation'
+            if field != 'gift_aid':
+                self.fields[field].label = False
+            else:
+                self.fields[field].label = 'Yes, I would like to Gift Aid my donation'

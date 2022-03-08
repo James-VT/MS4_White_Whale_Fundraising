@@ -40,3 +40,14 @@
 #gift-aid-explanation {
     display: none;
 }
+
+/* Below styling for country field taken from CI's Boutique Ado project for same */
+
+#id_country,
+#id_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_country option:first-child {
+    color: #6c6c6c;
+}
