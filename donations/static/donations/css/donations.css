@@ -5,6 +5,11 @@
     position: relative;
     max-width: 600px;
     margin: auto;
+    margin-bottom: 20px;
+}
+
+.donate-btn-style {
+    margin: 10px 10px 20px 0px;
 }
 
 .form-display {
