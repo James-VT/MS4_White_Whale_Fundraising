@@ -38,7 +38,7 @@ def donation_history(request, donation_number):
     donation = get_object_or_404(Donation, donation_number=donation_number)
 
     messages.info(request, (
-        f'This is a past confirmation for donation number {donation_number}.'
+        f'This is a past confirmation for donation number {donation_number}. '
         'A confirmation email was sent on the order date.'
     ))
 
