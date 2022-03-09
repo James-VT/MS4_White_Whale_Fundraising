@@ -37,7 +37,34 @@
                 <p>Membership status</p>
             </div>
             <div class="col-12 col-lg-4">
-                <p>Donation history</p>
+                <p class="text-muted">Donation history</p>
+                <div class="donation-history table-responsive">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Donation Number</th>
+                                <th>Date</th>
+                                <th>Gift Aid</th>
+                                <th>Donation Total</th>
+                            </tr>
+                            <tbody>
+                                {% for donation in donations %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'donation_history' donation.donation_number %}"
+                                        title="{{ donation.donation_number }}">
+                                            {{ donation.donation_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ donation.date }}</td>
+                                    <td>{{ donation.gift_aid }}</td>
+                                    <td>{{ donation.donation_total }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
             </div>
         </div>
         {{ profile }}
