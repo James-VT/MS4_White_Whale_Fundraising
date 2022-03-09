@@ -16,6 +16,15 @@
     border-radius: 20px;
 }
 
-#id_default_country {
+/* Some of below styling for country field taken from CI's Boutique Ado project for same */
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000;
     margin: 5px;
+    text-align: center;
+}
+
+#id_default_country option:first-child {
+    color: #6c6c6c;
 }

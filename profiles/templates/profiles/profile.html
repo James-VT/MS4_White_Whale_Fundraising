@@ -42,3 +42,7 @@
         </div>
         {{ profile }}
 {% endblock %}
+
+{% block postloadjs %}
+    <script type="text/javascript" src="{% static 'profiles/js/profiles.js' %}"></script>
+{% endblock %}
