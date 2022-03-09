@@ -159,6 +159,7 @@ def donation_success(request, donation_number):
     template = 'donations/donation_success.html'
     context = {
         'donation': donation,
+        'donation_gift_aid': donation.donation_total*1.25
     }
 
     return render(request, template, context)
