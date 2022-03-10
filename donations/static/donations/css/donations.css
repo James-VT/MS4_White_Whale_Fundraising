@@ -1,6 +1,6 @@
 /* Stripe elements taken from Stripe's outdated docs; edited according to the Boutique Ado project */
 
-.StripeElement,
+/* .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
   height: 40px;
@@ -11,7 +11,7 @@
   box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
-}
+} */
 
 .StripeElement--focus,
 .stripe-style-input:focus,
