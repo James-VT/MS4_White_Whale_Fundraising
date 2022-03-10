@@ -8,7 +8,7 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         """ Metaclass for the userprofile and to exclude user field """
         model = UserProfile
-        exclude = ('user',)
+        exclude = ('user', 'is_member')
 
     def __init__(self, *args, **kwargs):
         """
