@@ -3,9 +3,11 @@ from django.shortcuts import (render, redirect, reverse, get_object_or_404, Http
 from django.contrib import messages
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
-
+from django.conf import settings
 from .forms import DonationForm
 from .models import Donation
+
+import stripe
 
 
 # This view appears unnecessary and doesn't have enough in it to
@@ -24,32 +26,9 @@ def add_donation(request):
     """ View for taking payment and saving the donation to the database """
 
     if request.method == 'POST':
-        # So this is what the view should do when form is submitted (POSTed)
-        # donation_custom = int(request.POST['donation_custom'])
-        # donation_selectors = request.POST['donation_selectors']
-        # print(donation_custom)
-        # print(type(donation_custom))
-        # print(donation_selectors)
-        # if request.POST['donation_custom'] != '':
-        #     donation_custom = request.POST['donation_custom']
-        #     print(donation_custom)
-        #     print(type(donation_custom))
-        #     donation_total = float(request.POST['donation_custom'])
-        #     print(donation_total)
-        #     print(type(donation_total))
-        # donation_selectors = request.POST.get('donation_selectors', '')
-        # if donation_selectors:
-        #     donation_selectors = request.POST['donation_selectors']
-        #     print(donation_selectors)
-        #     print(type(donation_selectors))
-        #     donation_total = float(request.POST['donation_selectors'])
-        #     print(donation_total)
-        #     print(type(donation_total))
-        # form_data is what we can use to populate an instance of the DonationForm
-        # donation_total_uncleaned = request.POST['donation_total']
-        # donation_total = donation_total_uncleaned[1:]
-        # donation_value = request.POST['donation_total'][1]
-        # print(donation_value)
+        stripe_public_key = settings.STRIPE_PUBLIC_KEY
+        stripe_secret_key = settings.STRIPE_SECRET_KEY
+
         form_data = {
             'title': request.POST['title'],
             'first_name': request.POST['first_name'],
@@ -71,6 +50,14 @@ def add_donation(request):
         if form.is_valid():
             donation = form.save(commit=False)
             form.save()
+            total = form['donation_total']
+            stripe_total = round(total * 100)
+            stripe.api_key = stripe_secret_key
+            intent = stripe.PaymentIntent.create(
+                amount=stripe_total,
+                currency=settings.STRIPE_CURRENCY,
+            )
+            print(intent)
             # Save user's info to their profile if it's all good here
             request.session['save_info'] = 'save-info' in request.POST
             print(form_data)
@@ -113,10 +100,14 @@ def add_donation(request):
     # in the template we'll have access to 'form', which can be rendered using:
     # {{ form }}
 
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is missing. \
+            Did you forget to set it in your environment?')
+
     context = {
         'form': form,
-        'stripe_public_key': 'pk_test_51KCj87GcNeDqmjqMc5u10YRd1En3ctQtnVRw67L9x0EAnyQ2irKfzWC9UpK2ONidBFKP9P2Nzv7rw0VeyV6xVE3O002VcUFvUH',
-        'client_secret': 'test client secret',
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, 'donations/donation_form.html', context)
