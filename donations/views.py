@@ -159,7 +159,8 @@ def donation_success(request, donation_number):
     template = 'donations/donation_success.html'
     context = {
         'donation': donation,
-        'donation_gift_aid': float(donation.donation_total)*1.25
+        'donation_gift_aid': float(donation.donation_total)*1.25,
+        'stripe_public_key': 'pk_test_51KCj87GcNeDqmjqMc5u10YRd1En3ctQtnVRw67L9x0EAnyQ2irKfzWC9UpK2ONidBFKP9P2Nzv7rw0VeyV6xVE3O002VcUFvUH',
     }
 
     return render(request, template, context)

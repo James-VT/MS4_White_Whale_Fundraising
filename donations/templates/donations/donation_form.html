@@ -96,9 +96,14 @@
                         </div>
                     </fieldset>
 
-                    <div>
-                        Stripe stuff goes here
-                    </div>
+                    <fieldset>
+                        <legend>Payment details</legend>
+                        <!-- Stripe stuff goes here -->
+                        <div id="card-element"></div>
+
+                        <!-- Errors go here -->
+                        <div class="text-danger" id="card-errors" role="alert"></div>
+                    </fieldset>
 
                     <input type="submit" value="Donate" class="btn btn-success donate-btn-style">
 
@@ -109,5 +114,8 @@
 {% endblock %}
 
 {% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
     <script type="text/javascript" src="{% static 'donations/js/donations.js' %}"></script>
 {% endblock %}
