@@ -28,6 +28,7 @@ class UserProfile(models.Model):
     default_postcode = models.CharField(max_length=8, null=True, blank=True)
     default_country = CountryField(blank_label='Country',
                                    null=True, blank=True)
+    is_member = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username
