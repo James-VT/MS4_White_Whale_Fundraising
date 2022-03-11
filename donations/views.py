@@ -1,21 +1,13 @@
 """ Views for our donation pages """
 from django.shortcuts import (render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.contrib import messages
+from django.conf import settings
+import stripe
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
-from django.conf import settings
+
 from .forms import DonationForm
 from .models import Donation
-
-import stripe
-
-
-# This view appears unnecessary and doesn't have enough in it to
-# successfully store info in the DB
-# def donation_form(request):
-#     """ Donation form page """
-#     form = DonationForm()
-#     return render(request, 'donations/donation_form.html', {'donation_form': form})
 
 
 # This view should be able to handle anything to do with adding a donation
@@ -24,10 +16,10 @@ import stripe
 # visits the page to see the form)
 def add_donation(request):
     """ View for taking payment and saving the donation to the database """
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
-        stripe_public_key = settings.STRIPE_PUBLIC_KEY
-        stripe_secret_key = settings.STRIPE_SECRET_KEY
 
         form_data = {
             'title': request.POST['title'],
@@ -46,18 +38,12 @@ def add_donation(request):
         }
         # Instantiate the form and populate with above data using:
         form = DonationForm(form_data)
+
         # Check that the form is valid using:
         if form.is_valid():
             donation = form.save(commit=False)
             form.save()
-            total = form['donation_total']
-            stripe_total = round(total * 100)
-            stripe.api_key = stripe_secret_key
-            intent = stripe.PaymentIntent.create(
-                amount=stripe_total,
-                currency=settings.STRIPE_CURRENCY,
-            )
-            print(intent)
+
             # Save user's info to their profile if it's all good here
             request.session['save_info'] = 'save-info' in request.POST
             print(form_data)
@@ -74,6 +60,7 @@ def add_donation(request):
 
     # At this level, we're outside the POST block, so we can instantiate
     # a blank form using:
+
     if request.user.is_authenticated:
         try:
             profile = UserProfile.objects.get(user=request.user)
@@ -107,7 +94,7 @@ def add_donation(request):
     context = {
         'form': form,
         'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
+        # 'client_secret': intent.client_secret,
     }
 
     return render(request, 'donations/donation_form.html', context)
