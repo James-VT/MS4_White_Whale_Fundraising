@@ -34,16 +34,17 @@
                     {% csrf_token %}
                     
                     <div>
-                        <p>Please fill out the form below to complete your donation</p>
+                        <p>Please fill out the form below to complete your donation. Fields marked with an asterisk are required.</p>
                     </div>
 
                     <fieldset>
-                        <p>
+                        <strong>
                             Please select an amount to donate:
-                        </p>
+                        </strong>
+                        
                         <div class="selectors-container">
+                            <br>
                             <strong>
-                                <br>
                                 <em>
                                     <select name="donation_total" class="dropdown_style">
                                         <option selected class="text-center" value="5">£5</option>

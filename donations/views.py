@@ -17,7 +17,7 @@ from .models import Donation
 def add_donation(request):
     """ View for taking payment and saving the donation to the database """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_secret_key = settings.STRIPE_SECRET_KEY
+    stripe.api_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
 
@@ -38,11 +38,29 @@ def add_donation(request):
         }
         # Instantiate the form and populate with above data using:
         form = DonationForm(form_data)
+        print(type(form))
+        total = int(request.POST['donation_total']),
+        print(total[0])
+        print(type(total))
 
         # Check that the form is valid using:
         if form.is_valid():
             donation = form.save(commit=False)
             form.save()
+
+            # Stripe payment stuff
+            customer = stripe.Customer.create(
+                email=request.POST['email'],
+                name=request.POST['first_name'],
+                source=request.POST['stripeToken']
+            )
+
+            charge = stripe.Charge.create(
+                customer=customer,
+                amount=(total[0] * 100),
+                currency=settings.STRIPE_CURRENCY,
+                description="Donation",
+            )
 
             # Save user's info to their profile if it's all good here
             request.session['save_info'] = 'save-info' in request.POST

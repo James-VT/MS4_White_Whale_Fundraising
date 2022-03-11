@@ -31,6 +31,25 @@ This site is built to serve as a full-stack ecommerce site for a charitable orga
 
 ---
 
+# Features
+
+## Donation form
+
+The donation form allows users to donate a sum of money to the charity.
+
+![Image of top half of donation form](assets/features/donationformtophalf.png)
+
+![Image of bottom half of donation form](assets/features/donationformbottomhalf.png)
+
+* Users can:
+    * Choose from a selection of pre-set donation amounts.
+    * Choose whether to Gift Aid their donations.
+    * Fill in their details so that the charity can apply to have the donation value augmented with Gift Aid. For this reason, all required fields are for data required by HMRC for Gift Aid to be applied.
+    * Have their details auto-fill from those in their profile, if they are logged in and have completed same. Likewise, if users are logged in but have not submitted default details, a checkbox allows users to choose whether details they enter onto the form are saved to their profiles.
+    * 
+
+---
+
 # Deployment
 
 Below I include instructions on how to deploy, contribute to and clone this project.
