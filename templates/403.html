@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} 403 {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>403 error</h1>
+                <p>Looks like someone's a little lost fish! You do not have permission to access this page.</p>
+                <p><a href="{% url 'home' %}">Click here</a> to return to safety.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

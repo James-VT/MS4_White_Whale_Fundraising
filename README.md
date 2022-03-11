@@ -46,7 +46,7 @@ The donation form allows users to donate a sum of money to the charity.
     * Choose whether to Gift Aid their donations.
     * Fill in their details so that the charity can apply to have the donation value augmented with Gift Aid. For this reason, all required fields are for data required by HMRC for Gift Aid to be applied.
     * Have their details auto-fill from those in their profile, if they are logged in and have completed same. Likewise, if users are logged in but have not submitted default details, a checkbox allows users to choose whether details they enter onto the form are saved to their profiles.
-    * 
+    * Users do not need to be logged in to donate.
 
 ---
 
@@ -178,6 +178,9 @@ TO BE FINISHED
 
 * [Coolors](https://coolors.co/)
     * The colour palette for this site was chosen using Coolors.
+
+* [Stripe](https://stripe.com/gb)
+    * The payment handling for this site was built using Stripe.
 
 ## Tutorials
 
