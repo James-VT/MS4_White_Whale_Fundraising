@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} 500 {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>500 error</h1>
+                <p>Looks like someone's a little lost fish! Something went wrong, and it looks as though the problem's on us. Sorry!</p>
+                <p><a href="{% url 'home' %}">Click here</a> to return to safety.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
