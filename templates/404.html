@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} 404 {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>404 error</h1>
+                <p>Looks like someone's a little lost fish! The page you're looking for could not be found.</p>
+                <p><a href="{% url 'home' %}">Click here</a> to return to safety.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
