@@ -52,6 +52,30 @@ The save_info box was checked, meaning the information should be saved to the pr
 
 Success! The data was saved correctly to the user profile.
 
+### Linking the donation form with Stripe and the database
+
+To test the experience for a guest user (i.e. one who is not signed in) and to make sure information is being passed successfully through to both Stripe and our database at the same time, I filled in the form with the following information:
+
+![Image of cake user in form](assets/testing/donationformtesting/stripeanddbtestcake.png)
+
+To test these features, we can then click the donate button and check the information in the database and Stripe.
+
+First, we see our success page, so we know that this works, at least:
+
+![Image of success page](assets/testing/donationformtesting/donationformsuccesspage.png)
+
+Then we can go to our site admin and check to make sure the donation is recorded there:
+
+![Image of the donation's entry in the site admin](assets/testing/donationformtesting/cakedonationinadmin.png)
+
+Great. We know that donations are passing through to the site admin, even from non-signed in users.
+
+Now we check our Stripe dashboard:
+
+![Image of Sir Vicky Sponge's donation in the Stripe dashboard](assets/testing/donationformtesting/stripedashboardcakeuser.png)
+
+And there it is! Success.
+
 | User story goal met by this feature | How was this achieved? |
 | --- | --- |
 | Donate money to the charity | The site's donation form takes donations from users |
