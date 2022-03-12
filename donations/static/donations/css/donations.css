@@ -87,6 +87,12 @@
     color: #6c6c6c;
 }
 
+/*------------------Success page */
+
+.success-content {
+    padding: 40px;
+}
+
 /*------------------Media queries */
 
 @media (max-width: 992px) {
