@@ -42,7 +42,7 @@ button {
 /* -------------------------------- Header */
 
 .indigo {
-    background-color: #004de6;
+    background-color: #36013F;
 }
 
 .white-text {
@@ -50,7 +50,8 @@ button {
 }
 
 .logo {
-    margin-left: 10px;
+    margin: auto;
+    font-size: 75%;
 }
 
 .gutter-remove {
@@ -212,5 +213,11 @@ button {
 @media (min-width: 992px) {
     .allauth-form-inner-content input {
         max-width: 30%;
+    }
+}
+
+@media (min-width: 350px) {
+    .logo {
+        font-size: 100%;
     }
 }

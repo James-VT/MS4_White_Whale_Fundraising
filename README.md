@@ -188,6 +188,9 @@ Tutorials that assisted me with this project include Code Institute's Boutique A
 
 Youtube channel Codemy.com also helped me create this project. Specifically, [this video](https://www.youtube.com/watch?v=CVEKe39VFu8&t=251s)
 
+Others which provided code or inspiration:
+https://www.youtube.com/watch?v=AZs4zggS7kA
+
 ## Websites
 
 Several websites with similar features were helpful to understand what sort of information might be seen on a typical charity website, for example form fields, membership types, etc. In particular, the websites of the Royal Armouries, the National Funding Scheme, and the National Trust influenced my decisions on layouts, styling and orders. Credit inevitably also goes to StackOverflow and to Code Institute's Slack for a constant resource of information and answers.

@@ -30,12 +30,11 @@
 }
 
 .donation-form-card {
-    margin: 30px;
+    margin: 30px auto;
     background-color: #A7C7E7;
     border-radius: 4px;
     position: relative;
     max-width: 600px;
-    margin: auto;
     margin-bottom: 20px;
 }
 
@@ -86,4 +85,12 @@
 
 #id_country option:first-child {
     color: #6c6c6c;
+}
+
+/*------------------Media queries */
+
+@media (max-width: 992px) {
+    .donation-form-card {
+        margin: auto;
+    }
 }
