@@ -1,70 +1,90 @@
 """ Model for the membership choices """
-
+from datetime import datetime
+from django.conf import settings
 from django.db import models
+from django.db.models.signals import post_save
 
-# Create your models here.
+import stripe
+stripe.api_key = settings.STRIPE_SECRET_KEY
+
+# Much of this was taken fom three sources:
+# Boutique Ado by CI,
+# https://www.youtube.com/watch?v=zu2PBUHMEew by JustDjango and
+# a page with too long a URL for PEP8 so it's in the README
+
+
+MEMBERSHIP_CHOICES = (
+    ('Free', 'free'),
+    ('Supporter', 'sup')
+)
 
 
 class Membership(models.Model):
     """ Class for memberships """
-    name = models.CharField(max_length=10, default='')
-    description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    slug = models.SlugField(null=True, blank=True)
+    membership_type = models.CharField(
+        choices=MEMBERSHIP_CHOICES,
+        default='Free',
+        max_length=30)
+    price = models.DecimalField(max_digits=6, decimal_places=2,
+                                null=False, blank=False)
+    stripe_plan_id = models.CharField(max_length=50, null=True)
 
     def __str__(self):
-        return self.name
+        return self.membership_type
 
 
-# MEMBERSHIP_CHOICES = (
-#     ('Gold', 'Gold Level'),
-#     ('Silver', 'Silver Level'),
-#     ('Bronze', 'Bronze Level')
-# )
+class UserMembership(models.Model):
+    """ Class for users with memberships """
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
+    )
+    stripe_customer_id = models.CharField(max_length=50)
+    membership = models.ForeignKey(Membership, on_delete=models.SET_NULL,
+                                   null=True)
+
+    def __str__(self):
+        return self.user.username
 
 
-# class Membership(models.Model):
-#     """ Class for memberships """
-#     membership_level = models.CharField(
-#         max_length=6,
-#         choices=MEMBERSHIP_CHOICES,
-#         default='Bronze',
-#     )
-#     price = models.DecimalField(max_digits=6, decimal_places=2)
-#     description = models.TextField()
+def post_save_usermembership_create(sender, instance, created, *args, **kwargs):
+    """ Post save function that creates the membership """
+    user_membership, created = UserMembership.objects.get_or_create(
+        user=instance)
 
-#     def __str__(self):
-#         return self.membership_level
+    if user_membership.stripe_customer_id is None or user_membership.stripe_customer_id == '':
+        new_customer_id = stripe.Customer.create(email=instance.email)
+        free_membership = Membership.objects.get(membership_type='Free')
+        user_membership.stripe_customer_id = new_customer_id['id']
+        user_membership.membership = free_membership
+        user_membership.save()
 
 
-# class MembershipLevel(models.Model):
-#     """Defines the level of a member's subscription"""
-#     GOLD = 'GO'
-#     SILVER = 'SI'
-#     BRONZE = 'BR'
-#     MEMBERSHIP_CHOICES = [
-#         (GOLD, 'Gold Level'),
-#         (SILVER, 'Silver Level'),
-#         (BRONZE, 'Bronze Level'),
-#     ]
+post_save.connect(post_save_usermembership_create,
+                  sender=settings.AUTH_USER_MODEL)
 
-#     level = models.CharField(max_length=6, choices=MEMBERSHIP_CHOICES,
-#                              default=BRONZE,
-#                              description = models.TextField(),
-#                              sku = models.CharField(max_length=254,
-#                              null=True, blank=True,
-#                              price = models.DecimalField(max_digits=6,
-#                              decimal_places=2)
-#     )
 
-#     def __str__(self):
-#         return self.level in {self.GOLD, self.SILVER, self.BRONZE}
+class Subscription(models.Model):
+    """ Class for the subscription """
+    user_membership = models.ForeignKey(
+        UserMembership, on_delete=models.CASCADE)
+    stripe_subscription_id = models.CharField(max_length=50,
+                                              null=True)
+    active = models.BooleanField(default=True)
 
-    # sku = models.CharField(max_length=254, null=True, blank=True)
-    # description = models.TextField()
-    # price = models.DecimalField(max_digits=6, decimal_places=2)
+    def __str__(self):
+        return self.user_membership.user.username
 
-    # name = models.CharField(max_length-254)
-    # friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    @property
+    def get_created_date(self):
+        """ Get the date the memebership was bought """
+        subscription = stripe.Subscription.retrieve(
+            self.stripe_subscription_id)
+        return datetime.fromtimestamp(subscription.created)
 
-    # def get_friendly_name(self):
-    #     return self.friendly_name
+    @property
+    def get_next_billing_date(self):
+        """ Get the date the membership expires/ticks over """
+        subscription = stripe.Subscription.retrieve(
+            self.stripe_subscription_id)
+        return datetime.fromtimestamp(subscription.current_period_end)
