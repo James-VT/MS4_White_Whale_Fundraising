@@ -135,7 +135,7 @@ class Membership(models.Model):
         return self.membership_level
 ```
 
-The choices variable was moved to outside the class, and the __str__ function was edited not to return name, but the membership_level constructed. This fixed the issue. However, in the end I went with a different option so that admins could create new membership types as needed. This was done in order to future-proof the site against the evolving needs of the charity. Thus the choices field was removed, and replaced with a simple CharField.
+The choices variable was moved to outside the class, and the __str__ function was edited not to return name, but the membership_level constructed. This fixed the issue. However, in the end I went with a different option so that admins could create new membership types as needed. This was done in order to future-proof the site against the evolving needs of the charity. Thus the choices field was removed, and replaced with a simple CharField. I leave this here to demonstrate what I have learned from attempting to implement this idea.
 
 ---
 
