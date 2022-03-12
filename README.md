@@ -197,6 +197,9 @@ https://www.youtube.com/watch?v=zu2PBUHMEew
 This page also helped with the above, mentioned in memeberships/models.py:
 https://levelup.gitconnected.com/building-a-membership-system-in-django-under-5-mins-5efd7e03627d
 
+This video by Youtuber Code With Stein helped with the blog app:
+https://www.youtube.com/watch?v=m3hhLE1KR5Q&t=565s
+
 ## Websites
 
 Several websites with similar features were helpful to understand what sort of information might be seen on a typical charity website, for example form fields, membership types, etc. In particular, the websites of the Royal Armouries, the National Funding Scheme, and the National Trust influenced my decisions on layouts, styling and orders. Credit inevitably also goes to StackOverflow and to Code Institute's Slack for a constant resource of information and answers.
