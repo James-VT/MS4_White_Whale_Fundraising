@@ -1,0 +1,10 @@
+.blog-title {
+    text-align: center;
+}
+
+/*-----------Media queries */
+@media (min-width: 992px) {
+    .blog-title {
+        margin-top: 20px;
+    }
+}
