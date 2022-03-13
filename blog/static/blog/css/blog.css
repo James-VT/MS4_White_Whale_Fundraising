@@ -2,6 +2,17 @@
     text-align: center;
 }
 
+textarea {
+    max-height: 100px;
+    max-width: 500px;
+}
+
+input {
+    max-width: 500px;
+}
+
+
+
 /*-----------Media queries */
 @media (min-width: 992px) {
     .blog-title {

@@ -19,10 +19,18 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Create a blog post</h2>
-    <form action="{% url 'add_post' %}" method="POST">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button class="button" type="submit">Add post</button>
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="m-auto main-container">
+                <h2>Create a blog post</h2>
+                <form action="{% url 'add_post' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="button" type="submit">Add post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
