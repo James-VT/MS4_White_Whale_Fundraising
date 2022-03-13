@@ -100,7 +100,7 @@ def edit_post(request, slug):
                 obj = form.save(commit=False)
                 obj.save()
                 post = obj
-                messages.success(request, "You have successfully edit your \
+                messages.success(request, "You have successfully edited your \
                     blog post")
                 return redirect(reverse('post_detail', args=[obj.slug]))
             else:

@@ -16,9 +16,9 @@ This site is built to serve as a full-stack ecommerce site for a charitable orga
 3. Register an account on the site.
 4. Become a member of the charity by subscribing with a monthly or annual donation.
 5. Have their bank details used only in a secure way, such as that provided by the use of Stripe.
-6. Learn about fundraisers and fundraising activities on the blog.
-7. Leave comments for fundraisers and fundraising activities, such as messages of encouragement.
-8. Edit or delete their own comments.
+6. Learn about the activities of the charity and its supporters on the blog
+7. Make blog posts, which can be edited and deleted.
+8. Make comments on blog posts.
 
 ### A site owner will want to:
 9. Explain to users who they are, what they do and how they can help as soon as a user lands on the home page.
@@ -207,7 +207,7 @@ Code and logic were borrowed heavily from these sources for the base blog app.
 
 Fellow student [Suzy](https://github.com/suzybee1987) was once again hugely helpful for many, many questions I had during the making of this project, as was fellow (former) student [Jenny](https://github.com/jennymalmoe) whose repo provided a source of inspiration and answers. Both of these contributed heavily to the code and logic of the blog app, as did fellow (former) student https://github.com/pmeeny whose work provided a lot of inspiration across the project.
 
-For the error pages, the help of fellow students Guillermo Brachetta and Tom Nagy was invaluable. They helped reassure me as to where to locate them and why they weren't working during testing.
+For the error pages, the help of fellow students Guillermo Brachetta and Tom Nagy was invaluable. They helped reassure me as to where to locate them and why they weren't working during testing, and with several other issues.
 
 ## Websites
 
