@@ -15,6 +15,22 @@ input {
     color: #fff;
 }
 
+.blog-title {
+    margin-top: 40px;
+}
+
+.back-button {
+    width: auto;
+}
+
+.modal-trigger {
+    width: auto;
+}
+
+.edit-button {
+    width: auto;
+}
+
 button, .button {
     display: inline-block;
     font-weight: 400;
@@ -86,8 +102,11 @@ button, .button {
 
 
 /*-----------Media queries */
-@media (min-width: 992px) {
-    .blog-title {
+
+/* @media (min-width: 992px) {
+    button {
+        width: 110px;
+        height: 50px;
         margin-top: 20px;
     }
-}
+} */
