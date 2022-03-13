@@ -231,3 +231,9 @@ Several websites with similar features were helpful to understand what sort of i
 whalelighthousebanner.jpg is an open source image taken from Wikimedia Commons. Attribution: Gillfoto, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
 
 whitewhaleicon.jpg is is an open source image taken from Wikimedia Commons. Attribution: Tris T7, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+
+eilatdolphinreef.jpg is an open source image taken from Wikimedia Commans. Attribution: טל שמע, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+
+pinkanemonefish.jpg is an open source image taken from Wikimedia Commons. Attribution: טל שמע, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+
+caribbeanreefsquid.jpg is an open source image taken from Wikimedia Commans. Attribution: טל שמע, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
