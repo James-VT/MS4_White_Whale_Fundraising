@@ -1,7 +1,7 @@
 """ Forms for blog/comments """
 from django import forms
 
-from .models import Comment
+from .models import Comment, Post
 
 
 class CommentForm(forms.ModelForm):
@@ -9,4 +9,12 @@ class CommentForm(forms.ModelForm):
     class Meta:
         """ Meta class for comment form """
         model = Comment
-        fields = ['name', 'email', 'body']
+        fields = ['body']
+
+
+class PostForm(forms.ModelForm):
+    """ Class for the post form """
+    class Meta:
+        """ Meta class for post form """
+        model = Post
+        fields = ['title', 'intro', 'body']

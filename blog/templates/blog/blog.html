@@ -24,12 +24,12 @@
             <div class="col-12">
                 <div class="blog-title">
                     <h2>The blog</h2>
-                    <a href="#">Add a post</a>
+                    <a href="{% url 'add_post' %}">Add a post</a>
                 </div>
                 {% for post in posts %}
                     <div class="block">
                         <h2>{{ post.title }}</h2>
-                        <small>Posted at {{ post.date_added }}</small>
+                        <small>Posted at {{ post.created_on }}</small>
                         <p>{{ post.intro }}</p>
                         <a href="{% url 'post_detail' post.slug %}">Read more</a>
                     </div>

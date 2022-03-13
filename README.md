@@ -197,8 +197,17 @@ https://www.youtube.com/watch?v=zu2PBUHMEew
 This page also helped with the above, mentioned in memeberships/models.py:
 https://levelup.gitconnected.com/building-a-membership-system-in-django-under-5-mins-5efd7e03627d
 
-This video by Youtuber Code With Stein helped with the blog app:
+This video by Youtuber Code With Stein was key to building the blog app:
 https://www.youtube.com/watch?v=m3hhLE1KR5Q&t=565s
+as did the written version of the guide, here:
+https://codewithstein.com/build-a-simple-blog-using-django-3-in-under-20-minutes/
+Code and logic were borrowed heavily from these sources for the base blog app.
+
+## People
+
+Fellow student [Suzy](https://github.com/suzybee1987) was once again hugely helpful for many, many questions I had during the making of this project, as was fellow (former) student [Jenny](https://github.com/jennymalmoe) whose repo provided a source of inspiration and answers. Both of these contributed heavily to the code and logic of the blog app, as did fellow (former) student https://github.com/pmeeny whose work provided a lot of inspiration across the project.
+
+For the error pages, the help of fellow students Guillermo Brachetta and Tom Nagy was invaluable. They helped reassure me as to where to locate them and why they weren't working during testing.
 
 ## Websites
 
