@@ -117,6 +117,7 @@ button {
     text-align: center;
     border-radius: 20px;
     padding: 20px;
+    margin-top: 20px;
 }
 
 .allauth-form-inner-content {

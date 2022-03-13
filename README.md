@@ -14,20 +14,19 @@ This site is built to serve as a full-stack ecommerce site for a charitable orga
 1. Learn about the charity, its goals and its work.
 2. Donate money to the charity.
 3. Register an account on the site.
-4. Become a member of the charity by subscribing with a monthly or annual donation.
-5. Have their bank details used only in a secure way, such as that provided by the use of Stripe.
-6. Learn about the activities of the charity and its supporters on the blog
-7. Make blog posts, which can be edited and deleted.
-8. Make comments on blog posts.
+4. Have their bank details used only in a secure way, such as that provided by the use of Stripe.
+5. Learn about the activities of the charity and its supporters on the blog
+6. Make blog posts, which can be edited and deleted.
+7. Make comments on blog posts.
 
 ### A site owner will want to:
-9. Explain to users who they are, what they do and how they can help as soon as a user lands on the home page.
-10. Generate revenue via donations.
-11. Grow their member base by encouraging users to become new members.
-12. Raise awareness of upcoming fundraising events.
-13. Host a blog.
-14. Encourage interaction with users by allowing registered users to leave a comment.
-15. Add upcoming fundraising events to the site for users to see.
+8. Explain to users who they are, what they do and how they can help as soon as a user lands on the home page.
+9. Generate revenue via donations.
+10. Grow their member base by encouraging users to become new members.
+11. Raise awareness of upcoming fundraising events.
+12. Host a blog.
+13. Encourage interaction with users by allowing registered users to leave comments on blogs.
+14. Add upcoming fundraising events to the site for users to see.
 
 ---
 
@@ -47,6 +46,20 @@ The donation form allows users to donate a sum of money to the charity.
     * Fill in their details so that the charity can apply to have the donation value augmented with Gift Aid. For this reason, all required fields are for data required by HMRC for Gift Aid to be applied.
     * Have their details auto-fill from those in their profile, if they are logged in and have completed same. Likewise, if users are logged in but have not submitted default details, a checkbox allows users to choose whether details they enter onto the form are saved to their profiles.
     * Users do not need to be logged in to donate.
+
+## Blog
+
+The blog features full CRUD functionality. It allows users to read news from the organisation, as well as from other users, and comment on these.
+
+![]
+
+* All users can:
+    * Read blog posts.
+* Signed-in users can:
+    * Write blog posts.
+    * Edit their blog posts.
+    * Delete their blog posts.
+    * Comment on blog posts.
 
 ---
 
