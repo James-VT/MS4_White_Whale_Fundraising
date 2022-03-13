@@ -1,14 +1,15 @@
 """ View for the blog posts """
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 from .models import Post
 
 # A great deal of this code came from a number of sources:
 # Fellow students Jenny, Suzy and Pmeeny, all credited in readme
 # Basic code for a basic blog app came from Code With Stein (also in readme)
 # and I used the other students' work to expand on that
+
 
 def blog(request):
     """ Display of the blog posts """
@@ -41,7 +42,7 @@ def add_post(request):
                     form fields"
             )
     else:
-        form = PostForm()
+        form = PostForm
 
     template = 'blog/add_post.html'
     context = {
@@ -54,9 +55,9 @@ def add_post(request):
 def post_detail(request, slug):
     """ Function for displaying the blog post and commenting """
     context = {}
-    post = Post.objects.get(slug=slug)
-
-    context['post'] = post
+    queryset = Post.objects.all()
+    post = get_object_or_404(queryset, slug=slug)
+    
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
