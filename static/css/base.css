@@ -198,6 +198,52 @@ button {
     height: 2px;
 }
 
+/* -------------------------------- Parallax */
+
+.parallax-1 {
+    background-image: url("../../media/images/whitekillerwhale.jpg");
+
+    min-height: 650px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-2 {
+    background-image: url("../../media/images/pinkanemonefish.jpg");
+
+    min-height: 650px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-3 {
+    background-image: url("../../media/images/eilatdolphinreef.jpg");
+
+    min-height: 650px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-4 {
+    background-image: url("../../media/images/caribbeanreefsquid.jpg");
+
+    min-height: 650px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* -------------------------------- Media Queries */
 
 /* fixed top navbar only on medium and up - taken from Code Institute's Boutique Ado */
