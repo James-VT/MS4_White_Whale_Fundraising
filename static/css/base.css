@@ -114,6 +114,15 @@ button {
 }
 /* End of hero image styling */
 
+.center-elements {
+    text-align: center;
+    margin: auto;
+}
+
+.intro-text {
+    text-align: center;
+}
+
 /* -------------------------------- Allauth template styling */
 
 .allauth-form-positioner {
@@ -211,7 +220,7 @@ button {
 .parallax-1 {
     background-image: url("../../media/images/whitekillerwhale.jpg");
 
-    min-height: 650px;
+    min-height: 100%;
 
     background-attachment: fixed;
     background-position: center;
@@ -222,7 +231,7 @@ button {
 .parallax-2 {
     background-image: url("../../media/images/pinkanemonefish.jpg");
 
-    min-height: 650px;
+    min-height: 100%;
 
     background-attachment: fixed;
     background-position: center;
@@ -233,7 +242,7 @@ button {
 .parallax-3 {
     background-image: url("../../media/images/eilatdolphinreef.jpg");
 
-    min-height: 650px;
+    min-height: 100%;
 
     background-attachment: fixed;
     background-position: center;
@@ -279,6 +288,6 @@ button {
 
 @media (max-width: 992px) {
     .header-container {
-        padding-top: 100px;
+        padding-top: 95px;
     }
 }

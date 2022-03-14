@@ -45,7 +45,8 @@ def donation_history(request, donation_number):
     template = 'donations/donation_success.html'
     context = {
         'donation': donation,
-        'from_profile': True
+        'from_profile': True,
+        'donation_gift_aid': float(donation.donation_total)*1.25,
     }
 
     return render(request, template, context)

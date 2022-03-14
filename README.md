@@ -238,8 +238,10 @@ whalelighthousebanner.jpg is an open source image taken from Wikimedia Commons. 
 
 whitewhaleicon.jpg is is an open source image taken from Wikimedia Commons. Attribution: Tris T7, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
 
-eilatdolphinreef.jpg is an open source image taken from Wikimedia Commans. Attribution: טל שמע, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+eilatdolphinreef.jpg is an open source image taken from Wikimedia Commons. Attribution: טל שמע, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
 
 pinkanemonefish.jpg is an open source image taken from Wikimedia Commons. Attribution: טל שמע, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
 
-caribbeanreefsquid.jpg is an open source image taken from Wikimedia Commans. Attribution: טל שמע, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+caribbeanreefsquid.jpg is an open source image taken from Wikimedia Commons. Attribution: טל שמע, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+
+happyfish.jpeg is an open source image taken from Wikimedia Commons. Attribution: Bahurel Hernandez, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons
