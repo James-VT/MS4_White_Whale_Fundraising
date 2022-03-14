@@ -2,6 +2,8 @@
 
 This website serves as the main online presence of a charitable fundraising organisation dedicated to the conservation of whales and other sea creatures. Visitors to the site can become members of the organisation for a rolling monthly or annual donation, make one-off donations, and sponsor fundraising activities. Donations for membership are at a fixed amount, while one-off donations and sponsorships can be for any amount. Users can leave public messages for fundraisers whom they have sponsored. The owner(s) of the site will be using it to drive membership subscriptions, generate donations, and raise awareness of fundraising activities.
 
+The GitHub pages version of this site can be accessed by [clicking here.](https://james-vt.github.io/MS4_White_Whale_Fundraising/)
+
 ---
 
 # Table of contents
@@ -30,9 +32,28 @@ This site is built to serve as a full-stack ecommerce site for a charitable orga
 
 # Features
 
+## Navigation bar
+
+The header serves as a navigation bar, featuring links to the site's main features. The last of these is for user authentication and account manage. It displays different options depending on whether a user is logged in or out.
+
+* If a user is not logged in:
+    * A user can create an account.
+    * A user can log into their account.
+* If a user is logged in:
+    * A user can visit their profile page.
+    * A user can log out.
+
+## Profile creation and management
+
+Allauth was used to allow users to register, sign in and manage their profile. The benefit to the site admins from this is that users can store their details for Gift Aid purposes, keep track of their donations, and contribute to the blog.
+
+## Responsive design
+
+Bootstrap and Bulma were used to implement responsive design throughout the site. While efforts have been taken to test the site's responsiveness at different screen sizes, past experience has taught me that there are always outliers so any unintentional whitespace, overhang or general jankiness is the fault of my limited resources. Nonetheless, the methods at my disposal were utilised and I tested the site on three different desktop monitors, a Samsung Galaxy S5 and on the different screen size simulators available in Chrome's dev tools.
+
 ## Donation form
 
-The donation form allows users to donate a sum of money to the charity.
+The donation form allows users to donate a sum of money to the charity. A series of pre-set donation amounts are available as options. £30 is the highest option. The reason for this is that HMRC will occasionally allow Gift Aid to be claimed on donations from donors who do not qualify for Gift Aid, as long as the donation does not exceed £30. This way the charity can maximise the amount of money they can get from Gift Aid.
 
 ![Image of top half of donation form](assets/features/donationformtophalf.png)
 
@@ -61,6 +82,10 @@ The blog features full CRUD functionality. It allows users to read news from the
     * Delete their blog posts.
     * Comment on blog posts.
 
+## Admin
+
+Admin is a Django feature allowing a site admin to work in the backend. Superusers have the full range of abilities in the back end
+
 ---
 
 # Deployment
@@ -73,7 +98,7 @@ Below I include instructions on how to deploy, contribute to and clone this proj
 2. Once you're signed-up, this'll be your landing page.
 3. Click on the user icon in the top right corner of the screen. This opens a dropdown menu. Click "Your repositories."
 4. You'll then see a list of your repositories.
-5. In the list of repositories, click the repository you want - in this case, Halo Pizza.
+5. In the list of repositories, click the repository you want - in this case, White Whale Fundraising.
 6. Then, from the bar along the top (not the nav bar - lower, under the repo name) click Settings.
 7. On the Settings page, click "Pages" from the left-hand menu.
 8. In the Pages options, before you've deployed, your "Branch" under "Source" will have a default value of none. Click this, then set it to Main or Master depending on the version you're using. Mine, having been already deployed, says Master and yours will too when deployed, but ignore that discrepancy for now.

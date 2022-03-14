@@ -250,7 +250,7 @@ button {
 .parallax-4 {
     background-image: url("../../media/images/caribbeanreefsquid.jpg");
 
-    min-height: 650px;
+    min-height: 100%;
 
     background-attachment: fixed;
     background-position: center;
