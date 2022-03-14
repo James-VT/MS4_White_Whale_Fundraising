@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'sponsorship/css/sponsorship.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+	<div class="success-content">
+		<div id="box" >
+			<h4>Thank you for your sponsorship!</h4>
+			{% if sponsorship.gift_aid %}
+				<h5>With Gift Aid, your rolling donation of £5 a month is worth £7.50 a month to our causes! Thank you!</h5>
+			{% endif %}
+			<p>Your contribution helps the cause of whale and marine wildlife conservation around the world, and ensures the White Whale will not devour it. </p>
+			<hr>
+			<a class="" href="{% url 'home' %}">Home</a>
+		</div>
+		<div>
+			{% if from_profile %}
+				<a href="{% url 'profile' %}" class="return-to-profile">
+					Return to profile
+				</a>
+			{% endif %}
+		</div>
+	</div>
+
+{% endblock content %}
