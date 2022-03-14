@@ -49,7 +49,9 @@ The donation form allows users to donate a sum of money to the charity.
 
 The blog features full CRUD functionality. It allows users to read news from the organisation, as well as from other users, and comment on these.
 
-![]
+![Image of the blog posts view](assets/features/blogpostsview.png)
+
+![Image of the crud features available on the blog](assets/features/blogcrudview.png)
 
 * All users can:
     * Read blog posts.
@@ -186,9 +188,6 @@ TO BE FINISHED
 
 * [FontAwesome](https://fontawesome.com/)
     * The icons for social media links were taken from FontAwesome.
-
-* [Coolors](https://coolors.co/)
-    * The colour palette for this site was chosen using Coolors.
 
 * [Stripe](https://stripe.com/gb)
     * The payment handling for this site was built using Stripe.
