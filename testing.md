@@ -93,6 +93,11 @@ A visitor to the site will want to:
 | --- | --- | --- |
 | Learn about the charity, its goals and its work. | On the landing page, a piece of text immediately explains to the user what the site and the organisation are about. Also, a user can visit the blog without having to be logged in, and learn more from the posts there if there are any. | [Image of a blog post](assets/features/blogcrudview.png), [Image of the list of blog posts](assets/features/blogpostsview.png), [Image of the landing page text](assets/testing/donationformtesting/landingtext.png) |
 | Donate money to the charity. | The site features a donation app that allows users to select from a number of pre-set donation amounts. | [Image of donation form](assets/testing/donationformtesting/filledform1.png), [Image of lower half of donation form](assets/testing/donationformtesting/donationformnewinfo.png) |
+| Register an account on the site. | allauth is used to allow users to log into the site and manage their accounts. It handles authentication and authorisation. | [Image of the sign in form](assets/features/signinform.png), [Image of the register account form](assets/features/registerform.png) |
+| Have their bank details used only in a secure way, such as that provided by the use of Stripe. | Stripe ensures that no bank details need be retained in the code or in the database. | [Example image of a Stripe transaction](assets/testing/donationformtesting/stripedashboardcakeuser.png)
+| Learn about the activities of the charity and its supporters on the blog | The blog can be used by site owners and registered users to share news and information | [Image of the blog list](assets/features/blogpostsview.png)
+Make blog posts, which can be edited and deleted. | The blog features full CRUD functionality; users can create, read, edit and delete. | [Image of CRUD functionality in the blog](assets/features/blogcrudview.png)
+Make comments on blog posts. | Comments can be made on blog posts by registered users. | [Image of the blog comment form](assets/features/blogcommentform.png)
 
 # Bugs
 
