@@ -84,6 +84,15 @@ And there it is! Success.
 
 ---
 
+# Testing against user stories
+
+In this section we will test each user story against the features of the site to ensure that every one is met. Although some user stories are already mentioned in the feature testing above, I present this as something of a summary to serve as a check list that all user needs are met for certainty's sake.
+
+A visitor to the site will want to:
+| A user will want to: | How was this achieved? | Evidence of user story having been met |
+| --- | --- | --- |
+| Learn about the charity, its goals and its work. | On the landing page, a piece of text immediately explains to the user what the site and the organisation are about. Also, a user can visit the blog without having to be logged in, and learn more from the posts there if there are any. | [Image of a blog post](assets/features/blogcrudview.png), [Image of the list of blog posts](assets/features/blogpostsview.png), [Image of the landing page text](assets/testing/donationformtesting/landingtext.png) |
+
 # Bugs
 
 ## Membership Level Bug
