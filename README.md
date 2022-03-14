@@ -22,11 +22,9 @@ This site is built to serve as a full-stack ecommerce site for a charitable orga
 ### A site owner will want to:
 8. Explain to users who they are, what they do and how they can help as soon as a user lands on the home page.
 9. Generate revenue via donations.
-10. Grow their member base by encouraging users to become new members.
-11. Raise awareness of upcoming fundraising events.
-12. Host a blog.
-13. Encourage interaction with users by allowing registered users to leave comments on blogs.
-14. Add upcoming fundraising events to the site for users to see.
+10. Obtain full user details in order to be able to apply for Gift Aid on their donations.
+11. Host a blog.
+12. Encourage interaction with users by allowing registered users to leave comments on blogs and write new posts.
 
 ---
 
