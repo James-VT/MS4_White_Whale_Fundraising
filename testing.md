@@ -99,6 +99,15 @@ A visitor to the site will want to:
 Make blog posts, which can be edited and deleted. | The blog features full CRUD functionality; users can create, read, edit and delete. | [Image of CRUD functionality in the blog](assets/features/blogcrudview.png)
 Make comments on blog posts. | Comments can be made on blog posts by registered users. | [Image of the blog comment form](assets/features/blogcommentform.png)
 
+A site owner will want to:
+| A user will want to: | How was this achieved? | Evidence of user story having been met |
+| --- | --- | --- |
+| Explain to users who they are, what they do and how they can help as soon as a user lands on the home page. | Landing text on the homepage relays these things. | [Image of the home page landing text](assets/features/landingtext.png)
+| Generate revenue via donations. | Donation form allows users to donate to the organisation | [Image of donation form](assets/testing/donationformtesting/filledform1.png), [Image of lower half of donation form](assets/testing/donationformtesting/donationformnewinfo.png) |
+| Obtain full user details in order to be able to apply for Gift Aid on their donations. | Users can opt-in to Gift Aid on each donation they make, and they can save their details by logging in. | [Bottom half of donation form, showing gift aid and save details buttons](assets/features/donationformbottomhalf.png)
+| Host a blog. | A blog is hosted on the site. | [Image of CRUD functionality in the blog](assets/features/blogcrudview.png), [Image of the blog list](assets/features/blogpostsview.png)
+| Encourage interaction with users by allowing registered users to leave comments on blogs and write new posts. | Home page landing text invites users to visit the blog, and full CRUD features are available  | [Image of CRUD functionality in the blog](assets/features/blogcrudview.png), [Image of the blog list](assets/features/blogpostsview.png), [Image of the blog comment form](assets/features/blogcommentform.png), [Image of the home page landing text](assets/features/landingtext.png)
+
 # Bugs
 
 ## Membership Level Bug

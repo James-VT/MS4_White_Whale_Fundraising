@@ -103,3 +103,11 @@ button, .button {
 .white-space-handler {
     white-space: pre-wrap;
 }
+
+.main-container {
+    width: 90%;
+}
+
+.create-blog-head {
+    padding-top: 20px;
+}

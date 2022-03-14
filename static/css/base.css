@@ -277,7 +277,7 @@ button {
     }
 }
 
-@media (min-width: 350px) {
+@media (min-width: 390px) {
     .logo {
         font-size: 100%;
     }
@@ -286,5 +286,9 @@ button {
 @media (max-width: 992px) {
     .header-container {
         padding-top: 95px;
+    }
+
+    .hero-text {
+        width: 90%;
     }
 }
