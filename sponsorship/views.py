@@ -1,8 +1,11 @@
 """ Views for the sponsorship """
-from django.shortcuts import render
+import json
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 import stripe
+
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 
@@ -10,6 +13,7 @@ from .forms import SponsorshipForm
 from .models import Sponsorship
 
 
+@login_required
 def add_sponsorship(request):
     """ View for taking payment and establishing a sponsorship """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -35,10 +39,14 @@ def add_sponsorship(request):
         form = SponsorshipForm(form_data)
 
         if form.is_valid():
-            sponsorship = form.save(commit=False)
-            form.save()
 
             # Stripe stuff will go here, I think
+            customer = stripe.Customer.create(
+                email=request.POST['email'],
+                name=request.POST['first_name'],
+                source=request.POST['stripeToken']
+            )
+
             request.session['save_info'] = 'saveinfo' in request.POST
             return redirect(reverse('sponsorship_success', args=[sponsorship.sponsorship_number]))
         else:
@@ -65,17 +73,32 @@ def add_sponsorship(request):
             form = SponsorshipForm()
     else:
         form = SponsorshipForm()
-    
+
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your envrionment?')
-    
+
     context = {
         'form': form,
         'stripe_public_key': stripe_public_key
     }
 
     return render(request, 'sponsorship/sponsorship_form.html', context)
+
+
+@login_required
+def sponsorship_checkout(request, sponsorship_number):
+    """ Confirm sponsorship view """
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    product_id = settings.STRIPE_SPONSORSHIP_ID
+    price_id = settings.STRIPE_PRICE_ID
+
+    if request.method == "POST":
+
+        if form.is_valid():
+                add_sponsorship.sponsorship = form.save(commit=False)
+                form.save()
 
 
 def sponsorship_success(request, sponsorship_number):

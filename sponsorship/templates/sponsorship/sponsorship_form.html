@@ -22,8 +22,8 @@
         <div class="row">
             <div class="col-12 donation-form-card">
                 <hr>
-                <h3>Donation form</h3>
-                <h4>Your donation will help keep endangered marine species alive for future generations. This is your gift to them.</h4>
+                <h3>Sponsorship form</h3>
+                <h4>Your contribution will help us track the leviathan, campaign for its conservation and study, and stave off the end of all things.</h4>
                 <hr>
                 <form action="{% url 'add_sponsorship' %}" method="POST" class="form-display" id="payment-form">
                     <!-- 
@@ -83,14 +83,7 @@
                         </div>
                     </fieldset>
 
-                    <fieldset>
-                        <legend>Payment details</legend>
-                        <!-- Stripe stuff goes here -->
-                        <div id="card-element"></div>
-
-                        <!-- Errors go here -->
-                        <div class="text-danger" id="card-errors" role="alert"></div>
-                    </fieldset>
+                    <a href="{% url 'sponsorship_checkout' %}"></a>>
 
                     <input type="submit" value="Donate" class="btn btn-success donate-btn-style">
 
