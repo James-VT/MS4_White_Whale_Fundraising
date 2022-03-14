@@ -103,14 +103,3 @@ button, .button {
 .white-space-handler {
     white-space: pre-wrap;
 }
-
-
-/*-----------Media queries */
-
-/* @media (min-width: 992px) {
-    button {
-        width: 110px;
-        height: 50px;
-        margin-top: 20px;
-    }
-} */
