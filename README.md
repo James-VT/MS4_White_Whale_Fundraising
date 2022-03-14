@@ -195,6 +195,12 @@ TO BE FINISHED
 * [Stripe](https://stripe.com/gb)
     * The payment handling for this site was built using Stripe.
 
+* [Bootstrap](https://getbootstrap.com/)
+    * Bootstrap 5 was used for most of the styling on this site.
+
+* [Bulma](https://bulma.io)
+    * Bulma was used for some additional styling, particularly the footer.
+
 ## Tutorials
 
 Tutorials that assisted me with this project include Code Institute's Boutique Ado and Hello Django. I also leaned heavily on Django's own documentation for 3.2, and on [this video from Youtuber Dennis Ivy for the donation app.](https://www.youtube.com/watch?v=oZwyA9lUwRk)

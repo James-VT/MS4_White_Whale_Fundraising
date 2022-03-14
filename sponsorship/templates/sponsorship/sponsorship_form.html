@@ -83,9 +83,33 @@
                         </div>
                     </fieldset>
 
-                    <a href="{% url 'sponsorship_checkout' %}"></a>>
+                    <div>
+                        <div>
+                            <label for="paymentMethodSelect">Plan</label>
+                            <select class="form-control" id="exampleFormControlSelect1" name="plan">
+                              <option value="m" default>£5 monthly</option>
+                              <option value="a">£60 annualy</option>
+                            </select>
+                    </div>
 
-                    <input type="submit" value="Donate" class="btn btn-success donate-btn-style">
+                    <div class="form-group">
+                        <input type="checkbox" name="automatic" checked />
+                        <label for="automatic">Automatic renewal</label>
+                        <small class="form-text text-muted">
+                          Will automatically tick over the payment, so you don't need to worry about it.
+                        </small>
+                    </div>
+
+                    <div class="my-3 visually-hidden">
+                        <label>Payment Method</label>
+                        <div class="form-check">
+                          <input checked type="radio" id="radio_card" name="payment_method" value="card" class="form-check-input" checked>
+                          <label class="form-check-label" for="radio_card">Card</label>
+                        </div>
+                    </div>
+                    <a href="{% url 'sponsorship_checkout' %}">Click here to pay</a>>
+
+                    <input type="submit" value="Sponsor" class="btn btn-success donate-btn-style">
 
                 </form>
             </div>
