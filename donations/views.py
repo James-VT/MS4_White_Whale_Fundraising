@@ -112,7 +112,6 @@ def add_donation(request):
     context = {
         'form': form,
         'stripe_public_key': stripe_public_key,
-        # 'client_secret': intent.client_secret,
     }
 
     return render(request, 'donations/donation_form.html', context)
