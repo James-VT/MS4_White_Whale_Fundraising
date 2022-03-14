@@ -16,3 +16,99 @@
         </div>
     </div>
 {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 donation-form-card">
+                <hr>
+                <h3>Donation form</h3>
+                <h4>Your donation will help keep endangered marine species alive for future generations. This is your gift to them.</h4>
+                <hr>
+                <form action="{% url 'add_sponsorship' %}" method="POST" class="form-display" id="payment-form">
+                    <!-- 
+                        The action here should point to the donate or 'AddDonation' view.
+                        If you pass the form in as context to this rendered template, it will be available
+                        using Jinja { { form } }
+                     -->
+                    {% csrf_token %}
+                    
+                    <div>
+                        <p>Please fill out the form below to demonstrate your devotion. Fields marked with an asterisk are required.</p>
+                    </div>
+
+                    <fieldset>
+                        <strong>
+                            Please select an amount to donate:
+                        </strong>
+                        
+                        <strong>
+                            <legend>Details</legend>
+                            {{ form.title | as_crispy_field }}
+                            {{ form.first_name | as_crispy_field }}
+                            {{ form.last_name | as_crispy_field }}
+                            {{ form.email | as_crispy_field }}
+                            {{ form.phone_number | as_crispy_field }}
+                            {{ form.country | as_crispy_field }}
+                            {{ form.postcode | as_crispy_field }}
+                            {{ form.town_or_city | as_crispy_field }}
+                            {{ form.street_address1 | as_crispy_field }}
+                            {{ form.street_address2 | as_crispy_field }}
+                            {{ form.county | as_crispy_field }}
+                            {{ form.gift_aid | as_crispy_field }}
+                        </strong>
+                        <div>
+                            <a href="#" id="details-info-button">Why do we need all these details?</a>
+                            <p id="details-info" class="details-info-class">White Whale Fundraising uses these details for a number of purposes, such as account management and Gift Aid declarations. Even if you are not 
+                                currently eligible to Gift Aid your donations, we can retroactively apply for Gift Aid on your previous donations should you become eligible at 
+                                some point in the future. All details are held according to GDPR compliance.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="#" id="gift-aid-info-button">What is Gift Aid?</a>
+                            <p id="gift-aid-explanation" class="gift-aid-explanation-class">Clicking the box above to confirm you are happy to Gift Aid your donation allows White Whale Fundraising to claim an extra 25p from HMRC for every £1 you 
+                                donate, without it costing you a penny more.
+                                <br>
+                            <strong>What if I don't live in the UK, or am not a UK taxpayer?</strong>
+                            <br>
+                                HMRC will, on a case by case basis, allow Gift Aid to be applied on non-qualifying charitable donations of up to £30. To do this, they need the same details from the donor that they would need from a donor who qualified.
+                                To read more, visit <a href="https://www.gov.uk/donating-to-charity/gift-aid" target="_blank">HMRC's page on Gift Aid.</a>
+                            </p>
+                        </div>
+                        <div class="form-check-inline">
+                            {% if user.is_authenticated %}
+                                <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info" checked>
+                                <label class="form-check-label" for="id-save-info">Save this information to my profile</label>
+                            {% else %}
+                                <label class="form-check-label" for="id-save-info">
+                                    <a class="" href="{% url 'account_signup' %}">Create an account</a> or 
+                                    <a class="" href="{% url 'account_login' %}">login</a> to save your details.
+                                </label>
+                            {% endif %}
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Payment details</legend>
+                        <!-- Stripe stuff goes here -->
+                        <div id="card-element"></div>
+
+                        <!-- Errors go here -->
+                        <div class="text-danger" id="card-errors" role="alert"></div>
+                    </fieldset>
+
+                    <input type="submit" value="Donate" class="btn btn-success donate-btn-style">
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script type="text/javascript" src="{% static 'donations/js/donations.js' %}"></script>
+    <script type="text/javascript" src="{% static 'donations/js/stripe_elements.js' %}"></script>
+{% endblock %}
