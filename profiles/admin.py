@@ -13,7 +13,7 @@ class ProfileAdmin(admin.ModelAdmin):
               'default_postcode',
               'default_town_or_city', 'default_street_address1',
               'default_street_address2',
-              'default_county', 'is_member',)
+              'default_county',)
 
 
 admin.site.register(UserProfile, ProfileAdmin)
