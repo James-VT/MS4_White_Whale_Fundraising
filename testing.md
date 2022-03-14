@@ -1,6 +1,6 @@
 # Testing
 
-Here I will document the testing processes and bugs I encountered during the production of this project
+Here I will document the testing processes and bugs I encountered during the production of this project.
 
 # Feature testing
 
@@ -92,6 +92,7 @@ A visitor to the site will want to:
 | A user will want to: | How was this achieved? | Evidence of user story having been met |
 | --- | --- | --- |
 | Learn about the charity, its goals and its work. | On the landing page, a piece of text immediately explains to the user what the site and the organisation are about. Also, a user can visit the blog without having to be logged in, and learn more from the posts there if there are any. | [Image of a blog post](assets/features/blogcrudview.png), [Image of the list of blog posts](assets/features/blogpostsview.png), [Image of the landing page text](assets/testing/donationformtesting/landingtext.png) |
+| Donate money to the charity. | The site features a donation app that allows users to select from a number of pre-set donation amounts. | [Image of donation form](assets/testing/donationformtesting/filledform1.png), [Image of lower half of donation form](assets/testing/donationformtesting/donationformnewinfo.png) |
 
 # Bugs
 
