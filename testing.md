@@ -108,6 +108,48 @@ A site owner will want to:
 | Host a blog. | A blog is hosted on the site. | [Image of CRUD functionality in the blog](assets/features/blogcrudview.png), [Image of the blog list](assets/features/blogpostsview.png)
 | Encourage interaction with users by allowing registered users to leave comments on blogs and write new posts. | Home page landing text invites users to visit the blog, and full CRUD features are available  | [Image of CRUD functionality in the blog](assets/features/blogcrudview.png), [Image of the blog list](assets/features/blogpostsview.png), [Image of the blog comment form](assets/features/blogcommentform.png), [Image of the home page landing text](assets/features/landingtext.png)
 
+---
+
+# Validators
+
+## Lighthouse
+
+Lighthouse is a validator built in to Google Chrome, used to test for performance, best practice, SEO and, most importantly for us, accessibility. For this project I haven't worried too much about performance as we're using Stripe, which a number of fellow students have reported hammered their performance scores. Accessibility is the number one priority, and I have tried to remember best practices for this throughout development.
+
+Home page
+
+![Image of home page validation](assets/validators/homepagelighthouse.png)
+
+Donation form
+
+![Image of donation form page validation](assets/validators/donationformlighthouse.png)
+
+Blog
+
+![Image of blog page validation](assets/validators/bloglighthouse.png)
+
+Add blog post form
+
+![Image of add blog post form validation](assets/validators/addblogpostlighthouse.png)
+
+View blog post detail
+
+![Image of post_detail validation](assets/validators/blogpostviewlighthouse.png)
+
+Edit blog post form
+
+![Image of edit blog post form validation](assets/validators/editblogpostlighthouse.png)
+
+Allauth templates (scores all within one or two points of this)
+
+![Image of a sample allauth template page validation](assets/validators/allauthtemplatepageslighthouse.png)
+
+Profile view
+
+![Image of the profile page validation](assets/validators/profileviewlighthouse.png)
+
+---
+
 # Bugs
 
 ## Membership Level Bug
