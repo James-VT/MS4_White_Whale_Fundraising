@@ -40,7 +40,7 @@ class DonationForm(forms.ModelForm):
             'donation_total': 'Donation'
         }
         self.fields['first_name'].widget.attrs['autofocus'] = True
-        
+
         self.fields['donation_total'].label = [0]
         for field in self.fields:
             if field != 'country':
@@ -49,10 +49,15 @@ class DonationForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 if field != 'donation_total':
-                    self.fields[field].widget.attrs['placeholder'] = placeholder
+                    # Line adjusted here for PEP8
+                    self.fields[field].widget.attrs[
+                        'placeholder'] = placeholder
                     if field != 'gift_aid':
-                        self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+                        # Line adjusted here for PEP8
+                        self.fields[field].widget.attrs[
+                            'class'] = 'stripe-style-input'
             if field != 'gift_aid':
                 self.fields[field].label = False
             else:
-                self.fields[field].label = 'Yes, I would like to Gift Aid my donation'
+                self.fields[field].label = 'Yes, I would like to Gift Aid \
+                    my donation'

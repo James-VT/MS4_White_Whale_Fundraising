@@ -37,7 +37,8 @@ pre_save.connect(pre_save_blog_post_receiver, sender=Post)
 
 class Comment(models.Model):
     """ Model for the comments """
-    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, related_name='comments',
+                             on_delete=models.CASCADE)
     comment_creator = models.ForeignKey(User, on_delete=models.CASCADE,
                                         related_name="comment", default=1)
     body = models.TextField()

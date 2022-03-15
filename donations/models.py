@@ -12,7 +12,6 @@ from profiles.models import UserProfile
 class Donation(models.Model):
     """ Class for handling donations """
 
-
     donation_number = models.CharField(max_length=32,
                                        null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
@@ -42,7 +41,6 @@ class Donation(models.Model):
         Generate a random, unique donation number using UUID
         """
         return uuid.uuid4().hex.upper()
-
 
     def save(self, *args, **kwargs):
         """

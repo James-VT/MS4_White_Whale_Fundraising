@@ -57,7 +57,6 @@ def post_detail(request, slug):
     context = {}
     queryset = Post.objects.all()
     post = get_object_or_404(queryset, slug=slug)
-    
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -106,7 +105,8 @@ def edit_post(request, slug):
             else:
                 messages.error(request, "Failed to update blog post")
         else:
-            messages.info(request, 'You need to be the post creator to do that')
+            messages.info(request, 'You need to be the post creator \
+                to do that')
     else:
         form = PostForm(instance=post)
         messages.info(request, f'You are editing {post.title}')
@@ -118,6 +118,7 @@ def edit_post(request, slug):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def delete_post(request, slug):

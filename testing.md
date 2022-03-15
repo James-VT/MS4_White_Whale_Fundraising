@@ -174,6 +174,12 @@ toasts.js results had a couple of notices, both of which were to do with how Boo
 
 ![Image of toasts.js results](assets/validators/toastjshint.png)
 
+## PEP8
+
+PEP8 is a Python validator that keeps Python at a universally sound level. Like W3C, it was hard to show each Python file's result with the code itself, so instead I attach the following as indicative of all of them.
+
+![Image of PEP8 All Right confirmation](assets/validators/pep8validator.png)
+
 ---
 
 # Bugs

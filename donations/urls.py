@@ -4,5 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.add_donation, name="add_donation"),
-    path('donation_success/<donation_number>', views.donation_success, name="donation_success"),
+    # Line adjusted here for PEP8
+    path('donation_success/<donation_number>', views.donation_success,
+         name="donation_success"),
 ]

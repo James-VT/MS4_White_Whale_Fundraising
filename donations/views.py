@@ -1,5 +1,6 @@
 """ Views for our donation pages """
-from django.shortcuts import (render, redirect, reverse, get_object_or_404, HttpResponse)
+from django.shortcuts import (render, redirect, reverse,
+                              get_object_or_404, HttpResponse)
 from django.contrib import messages
 from django.conf import settings
 import stripe
@@ -11,8 +12,10 @@ from .models import Donation
 
 
 # This view should be able to handle anything to do with adding a donation
-# It might help you make sense of what's happening by giving it a name such as 'AddDonation'
-# It will be responsible for processing either POST (when form is submitted), or GET (when user
+# It might help you make sense of what's happening by giving it a name
+# such as 'AddDonation'
+# It will be responsible for processing either POST (when form is submitted),
+# or GET (when user
 # visits the page to see the form)
 def add_donation(request):
     """ View for taking payment and saving the donation to the database """
@@ -61,7 +64,8 @@ def add_donation(request):
 
             # Save user's info to their profile if it's all good here
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('donation_success', args=[donation.donation_number]))
+            return redirect(reverse('donation_success',
+                            args=[donation.donation_number]))
         else:
             messages.error(request, 'Your donation failed')
 
