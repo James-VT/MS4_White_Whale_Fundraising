@@ -154,6 +154,26 @@ W3C CSS Validator does what you'd expect - it validates CSS. As I validated via 
 
 ![Image of W3C CSS validator result for all pages](assets/validators/w3ccssvalidator.png)
 
+## JSHint
+
+JSHInt validates JavaScript, checking for errors, unnecessary semicolons, unused variables and such.
+
+donations.js results
+
+![Image of donations.js results](assets/validators/donationsjshint.png)
+
+stripe_elements.js results had a couple of notices, both of which related to information being passed between the front and back ends, thus they remain.
+
+![Image of stripe_elements.js results](assets/validators/stripeelementsjshint.png)
+
+profiles.js results
+
+![Image of profiles.js results](assets/validators/profilejshint.png)
+
+toasts.js results had a couple of notices, both of which were to do with how Bootstrap does its toast thing so we must endeavour to persevere.
+
+![Image of toasts.js results](assets/validators/toastjshint.png)
+
 ---
 
 # Bugs
