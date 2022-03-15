@@ -127,7 +127,7 @@ Above is an image of the comment form. Commenting is only available to authentic
 | Comment form | Write a comment and post it. | Success - Comments are posted
 | Add a blog post | As an authenticated user, click the button to add a blog post from the blog list view. All fields are required. Fill them in and click post. | Success - a new blog post is posted.
 | Edit a blog post | As the blog post creator, click on the edit button to edit the blog. Make your changes and click to submit it. | Success - the changes are saved, and the blog post now features in its edited form.
-| Delete a blog post | As the blog post creator, click on the delete button to delete the blog. | Success - the blog post is deleted.
+| Delete a blog post | As the blog post creator, click on the delete button to open a modal that seeks to confirm that the authenticated user wants to delete the blog post. Click the grey button to cancel and go back, or click the red button to confirm deletion. | Success - the blog post is deleted.
 
 ---
 
@@ -174,6 +174,12 @@ A site owner will want to:
 | Obtain full user details in order to be able to apply for Gift Aid on their donations. | Users can opt-in to Gift Aid on each donation they make, and they can save their details by logging in. | [Bottom half of donation form, showing gift aid and save details buttons](assets/features/donationformbottomhalf.png)
 | Host a blog. | A blog is hosted on the site. | [Image of CRUD functionality in the blog](assets/features/blogcrudview.png), [Image of the blog list](assets/features/blogpostsview.png)
 | Encourage interaction with users by allowing registered users to leave comments on blogs and write new posts. | Home page landing text invites users to visit the blog, and full CRUD features are available  | [Image of CRUD functionality in the blog](assets/features/blogcrudview.png), [Image of the blog list](assets/features/blogpostsview.png), [Image of the blog comment form](assets/features/blogcommentform.png), [Image of the home page landing text](assets/features/landingtext.png)
+
+---
+
+# Responsiveness
+
+This site features many media queries to allow it to appear consistently at all screen sizes. I have done this using dev tools (to do this, right click on any page, click Inspect, then along the new bar at the top of the page select the device you'd like to emulate or select responsive and then click and drag the sides), my own two monitors, two separate desktop monitors at work and my Samsung Galaxy S5. To assist in ensuring continuity across browsers, I have enlisted the help of AutoPrefixer (credit in Technologies Used).
 
 ---
 

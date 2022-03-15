@@ -1,6 +1,29 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .order-history {
     max-height: 416px;
     overflow-y: auto;
+}
+
+.profile-form-input::-webkit-input-placeholder {
+    color: #aab7c4;
+}
+
+.profile-form-input::-moz-placeholder {
+    color: #aab7c4;
+}
+
+.profile-form-input:-ms-input-placeholder {
+    color: #aab7c4;
+}
+
+.profile-form-input::-ms-input-placeholder {
+    color: #aab7c4;
 }
 
 .profile-form-input::placeholder {

@@ -1,22 +1,51 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /* Stripe elements taken from Stripe's outdated docs; edited according to the Boutique Ado project */
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Righteous&family=Roboto&display=swap');
 
 
 .StripeElement,
 .stripe-style-input {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 40px;
   padding: 10px 12px;
   border: 1px solid transparent;
   border-radius: 4px;
   background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-box-shadow: 0 1px 3px 0 #e6ebf1;
+          box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;
+  -webkit-transition: -webkit-box-shadow 150ms ease;
+  transition: -webkit-box-shadow 150ms ease;
+  -o-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease, -webkit-box-shadow 150ms ease;
 }
 
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
+}
+
+.stripe-style-input::-webkit-input-placeholder {
+    color: #6c6c6c;
+}
+
+.stripe-style-input::-moz-placeholder {
+    color: #6c6c6c;
+}
+
+.stripe-style-input:-ms-input-placeholder {
+    color: #6c6c6c;
+}
+
+.stripe-style-input::-ms-input-placeholder {
+    color: #6c6c6c;
 }
 
 .stripe-style-input::placeholder {
@@ -42,7 +71,9 @@
 
 .selectors-container {
     text-align: center;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: auto;
 }
 
@@ -54,7 +85,9 @@
 }
 
 .text-center {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .custom-input-label {
