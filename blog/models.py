@@ -7,8 +7,8 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     """ Model for the posts """
-    title = models.CharField(max_length=255)
-    slug = models.SlugField()
+    title = models.CharField(max_length=220)
+    slug = models.SlugField(max_length=255)
     updated_when = models.DateTimeField(auto_now_add=True)
     intro = models.TextField()
     body = models.TextField()

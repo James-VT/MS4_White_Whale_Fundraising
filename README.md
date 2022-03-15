@@ -154,6 +154,8 @@ Heroku allows us to host Python projects, instead of solely static sites which a
 6. Choose a region. In our case, Europe.
 7. Click "Create app."
 8. From Heroku Resources you'll need Postgres. The free plan will work fine for this.
+9. To get your database moved over, you'll need to swipe the database url from the config vars of your project on Heroku (this will be auto-generated for you since you chose Postgres).
+10. In your settings.py, set up the Postgres database as your new database. Personally, following Boutique Ado, I commented out the existing database, wrote in the new one, and then migrated the migrations over to the new one. This required psycopg2 and dj_database_parse, which were installed via pip3.
 
 ### Connect your Git repository to Heroku
 
