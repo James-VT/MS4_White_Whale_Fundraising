@@ -4,6 +4,16 @@ Here I will document the testing processes and bugs I encountered during the pro
 
 # Feature testing
 
+Here I record my testing procedures for the features of the site.
+
+## Navigation bar
+
+| Feature | How to test | Result |
+| --- | --- | --- |
+| Responsive format - the header shrinks at small screen sizes, with its menu becoming a drop-down instead of a horizontal list. | Visit any page on small screen devices, or use devtools to change the width | Success - The layout changes responsively.
+| Links for home page, donation form and blog | Click them. | Success - in both cases, the user is navigated to the right place.
+| Links/drop down menu for authentication features. | Click to see if the drop-down menu appears with the correct options for whether a user is authenticated or not, then click those links to see whether the links work. | Success - All appears as relevant, and the links work.
+
 ## Donation form
 
 ### Donation form - Passing information through to the database
@@ -76,11 +86,16 @@ Now we check our Stripe dashboard:
 
 And there it is! Success.
 
-| User story goal met by this feature | How was this achieved? |
-| --- | --- |
-| Donate money to the charity | The site's donation form takes donations from users |
-| Generate revenue via donations | The donation form on the site allows users to donate money to the organisation |
-| Have their bank details used only in a secure way, such as that provided by the use of Stripe | Stripe handles payments from users and guarantees the secure handling of payment details so that these do not need to be stored anywhere in the site's code or the administration |
+| Feature | How to test | Result |
+| --- | --- | --- |
+| Drop-down menu for donation amounts | Click and see. | Success - the select menu drops down as it should, and all options are selectable.
+| All input fields working correctly | Click into them and type, or select country, or toggle as appropiate. Same works with Stripe's card field. | Success - all input elements accept their appropriate input type
+| JavaScript elements: information on why the organisation requires most fields, and on Gift Aid. | Click them, and they should reveal some text. | Success - the JavaScript is linked up correctly and the elements work.
+| Different options on display depending on whether is logged in or not, and appropriate links for these | Visit the page as an authenticated user, and as an unauthenticated one. Signed-in users should have the option to save the details entered into the form to their profile. Non-signed-in users should have text and links inviting them to sign in for register if they want to save their details. | Success - Different options appear as appropriate and the links work.
+| Form validation | Attempt to send the form without certain required fields being filled in | Success - the donation cannot be made without the required fields being filled correctly. Notifications pop up to tell the user which field(s) needs attention. 
+| Submit a donation | Fill in all required fields and click submit. Then check the database in the site admin, and the Stripe dashboard, to ensure the donation has sent correctly. If the donation is a failure, the form will fail to send and the users will get a toast notifying them of same. If a success, users will be taken to the success page and if registered, can view the donation history on their profile. | Success - both authenticated and non-authenticated users can submit donations.
+| Opt into/out of Gift Aid, and allow the site owners to record this. | Check the Gift Aid box, make a donation, and then check the database in the admin, where it will be recorded. As a bonus, authenticated users can check their donation history on their profile to see the Gift Aid status for each of their previous donations. | Success - gift aided donations are reflected accurately in the database. They are not recorded on Stripe as the customer's payment is not itself affected. 
+| Autofill details to and from the user profile | Make a donation with the save box ticked, then check the profile. Or fill in the details in the profile, then check the form. | Success - both methods work. Information is carried from one to the other, and can be updated as well.
 
 ---
 
