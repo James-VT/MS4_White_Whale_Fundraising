@@ -2,8 +2,6 @@
 
 This website serves as the main online presence of a charitable fundraising organisation dedicated to the conservation of whales and other sea creatures. Visitors to the site can become members of the organisation for a rolling monthly or annual donation, make one-off donations, and sponsor fundraising activities. Donations for membership are at a fixed amount, while one-off donations and sponsorships can be for any amount. Users can leave public messages for fundraisers whom they have sponsored. The owner(s) of the site will be using it to drive membership subscriptions, generate donations, and raise awareness of fundraising activities.
 
-The GitHub pages version of this site can be accessed by [clicking here.](https://james-vt.github.io/MS4_White_Whale_Fundraising/)
-
 ---
 
 # Table of contents
