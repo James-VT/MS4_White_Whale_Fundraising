@@ -223,6 +223,9 @@ TO BE FINISHED
 * [Bulma](https://bulma.io)
     * Bulma was used for some additional styling, particularly the footer.
 
+* [django-llauth](https://django-allauth.readthedocs.io/en/latest/)
+    * django-allauth was utilised for the user authentication on the site.
+
 ## Tutorials
 
 Tutorials that assisted me with this project include Code Institute's Boutique Ado and Hello Django. I also leaned heavily on Django's own documentation for 3.2, and on [this video from Youtuber Dennis Ivy for the donation app.](https://www.youtube.com/watch?v=oZwyA9lUwRk)

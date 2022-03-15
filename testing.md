@@ -98,6 +98,7 @@ And there it is! Success.
 | Submit a donation | Fill in all required fields and click submit. Then check the database in the site admin, and the Stripe dashboard, to ensure the donation has sent correctly. If the donation is a failure, the form will fail to send and the users will get a toast notifying them of same. If a success, users will be taken to the success page and if registered, can view the donation history on their profile. | Success - both authenticated and non-authenticated users can submit donations.
 | Opt into/out of Gift Aid, and allow the site owners to record this. | Check the Gift Aid box, make a donation, and then check the database in the admin, where it will be recorded. As a bonus, authenticated users can check their donation history on their profile to see the Gift Aid status for each of their previous donations. | Success - gift aided donations are reflected accurately in the database. They are not recorded on Stripe as the customer's payment is not itself affected. 
 | Autofill details to and from the user profile | Make a donation with the save box ticked, then check the profile. Or fill in the details in the profile, then check the form. | Success - both methods work. Information is carried from one to the other, and can be updated as well.
+| Success form | Submit a donation, with or without GiftAid | Success - the success page shows itself after a successful donation. If Gift Aid was checked, the user can see how much more their donation is worth to the charity.
 
 ---
 
@@ -132,7 +133,23 @@ Above is an image of the comment form. Commenting is only available to authentic
 
 ## User profiles
 
-The authentication system is handled by allauth 
+The authentication system is handled by django-allauth (link to full documentation in README), but worth noting is this project's profile page, which allows users to store their details for purposes of Gift Aid, and keeps track of their donations.
+
+![Image of the data held on the profile form](assets/testing/donationformtesting/userprofiledefaultdata.png)
+
+Above is an image of a registered user's data held on the profile form.
+
+![Image of a user's donation history](assets/features/donationhistory.png)
+
+Above is an image of a user's donation history on their profile page.
+
+| Feature | How to test | Result |
+| --- | --- | --- |
+| Profile page | Navigate to the profile page once signed in by clicking "My profile" from the dropdown in the navigation bar. | Success - signed in users can view their profile page.
+| Store details | Fill in the form with details and click Update Information. As a bonus, navigate to the donation form and check the information there. This, too, will have updated with your new details. | Success - The details are updated in the profile and the donation form.
+| Donation history | Once at least one donation has been made, check the donation history section of the user profile. Donations will be displayed here along with whether or not they included Gift Aid. | Success - each new donation appears in the list with accurate information.
+
+---
 
 # Testing against user stories
 
