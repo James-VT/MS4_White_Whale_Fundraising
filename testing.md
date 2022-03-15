@@ -16,6 +16,8 @@ Here I record my testing procedures for the features of the site.
 
 ## Donation form
 
+As the main goal of this project was to create a fullstack e-commerce site using a payment systems such as Stripe, the donation form is arguably the main feature.
+
 ### Donation form - Passing information through to the database
 
 Before linking Stripe to the project to take payments, I wanted to test that information was passing through properly to the database and that donation forms were being saved correctly. I had experienced a lot of problems building the form, so this was an important step.
@@ -98,6 +100,39 @@ And there it is! Success.
 | Autofill details to and from the user profile | Make a donation with the save box ticked, then check the profile. Or fill in the details in the profile, then check the form. | Success - both methods work. Information is carried from one to the other, and can be updated as well.
 
 ---
+
+## Blog
+
+The blog allows registered users of all levels to create blog posts and comment on them. This provides the project with the full range of CRUD functionality.
+
+## Viewing the list of blogs
+
+![Image of the list of available blogs to read](assets/features/blogpostsview.png)
+
+Above is the view a user meets with after navigating to the blog via the navigation bar link.
+
+![Image of the view of a blog post](assets/features/blogcrudview.png)
+
+Above is the view of a blog post from the perspective of its creator. The view for a user, whether registered or guest, is the same, but without the additional CRUD buttons featured here.
+
+![Image of the comment form](assets/features/blogcommentform.png)
+
+Above is an image of the comment form. Commenting is only available to authenticated users. Guest users will see a link inviting them to sign in if they wish to make a commment.
+
+| Feature | How to test | Result |
+| --- | --- | --- |
+| Blog posts list | Navigate to the blog section via the navigation bar link and see whether you are on the blog. | Success - the link works, and you're on the blog.
+| View a blog post | Click on a "read more" button to be taken to a page where you can read a blog post | Success - the read more links work, and a user can read the blog post there.
+| Comment form | Write a comment and post it. | Success - Comments are posted
+| Add a blog post | As an authenticated user, click the button to add a blog post from the blog list view. All fields are required. Fill them in and click post. | Success - a new blog post is posted.
+| Edit a blog post | As the blog post creator, click on the edit button to edit the blog. Make your changes and click to submit it. | Success - the changes are saved, and the blog post now features in its edited form.
+| Delete a blog post | As the blog post creator, click on the delete button to delete the blog. | Success - the blog post is deleted.
+
+---
+
+## User profiles
+
+The authentication system is handled by allauth 
 
 # Testing against user stories
 

@@ -108,6 +108,11 @@ button, .button {
     width: 90%;
 }
 
+.margin-custom {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
 .create-blog-head {
     padding-top: 20px;
 }
