@@ -1,5 +1,7 @@
 # White Whale Fundraising
 
+# About
+
 This website serves as the main online presence of a charitable fundraising organisation dedicated to the conservation of whales and other sea creatures. Visitors to the site can become members of the organisation for a rolling monthly or annual donation, make one-off donations, and sponsor fundraising activities. Donations for membership are at a fixed amount, while one-off donations and sponsorships can be for any amount. Users can leave public messages for fundraisers whom they have sponsored. The owner(s) of the site will be using it to drive membership subscriptions, generate donations, and raise awareness of fundraising activities.
 
 ---
@@ -80,9 +82,19 @@ The blog features full CRUD functionality. It allows users to read news from the
     * Delete their blog posts.
     * Comment on blog posts.
 
-## Admin
+---
 
-Admin is a Django feature allowing a site admin to work in the backend. Superusers have the full range of abilities in the back end
+# Design
+
+Due to the charitable nature the organisation behind the website and the heavy emphasis on the importance of Gift Aid to its donations, I took as a fair chunk of inspiration the gov.uk site to which it links from the donation form page. This site is AAA for accessibility due to its very simple colours and kind contrasts.
+
+![Example of gov.uk page](assets/features/inspirationpage.png)
+
+However, with the theme of aquatic life I chose colours suited to this. Purples were chosen for the main tones as blue seemed a bit obvious. Backgrounds and text were whites. The various authentication forms, to mark them as different, have a distinct coral-coloured background.
+
+![Image of coolers example for this projeect](assets/features/coolers.png)
+
+Google Fonts were chosen for attractiveness against these colours. Initially I was going to use the Lobster font for larger text elements simply because it had a marine-themed name but then I discovered Righteous and much preferred that. Roboto is used elsewhere due to its simple popularity across web design.
 
 ---
 
@@ -171,7 +183,7 @@ TO BE FINISHED
     * Pip is the package installer for Python, allowing us to install the packages we need for this site.
 
 * [Jinja](https://www.palletsprojects.com/p/jinja/)
-    * Jinja is a templating engine for Python, used to write Flask and other templating services.
+    * Jinja is a templating engine for Python, used to write in the HTML for Flask, Django and other templating services.
 
 * [GitHub](https://github.com/)
     * GitHub is where we host our site.
@@ -223,6 +235,11 @@ TO BE FINISHED
 
 * [django-llauth](https://django-allauth.readthedocs.io/en/latest/)
     * django-allauth was utilised for the user authentication on the site.
+
+* [Coolers](https://coolors.co/36013f-f2f3f4-4b0082-aaaaaa-dfe0e2)
+    * Coolers was used to provide and example the project's colours.
+
+---
 
 ## Tutorials
 
