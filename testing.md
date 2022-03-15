@@ -148,6 +148,12 @@ Profile view
 
 ![Image of the profile page validation](assets/validators/profileviewlighthouse.png)
 
+## W3C CSS Validator
+
+W3C CSS Validator does what you'd expect - it validates CSS. As I validated via the copy and paste method, the evidence is flimsy. Nonetheless, I attach an image that is indicative of the results of all of them and I invite the doubter to run the test themselves by copying and pasting any of my CSS code here: https://jigsaw.w3.org/css-validator/#validate_by_input
+
+![Image of W3C CSS validator result for all pages](assets/validators/w3ccssvalidator.png)
+
 ---
 
 # Bugs
