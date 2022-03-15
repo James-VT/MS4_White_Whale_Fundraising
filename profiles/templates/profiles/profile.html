@@ -55,7 +55,13 @@
                                         </a>
                                     </td>
                                     <td>{{ donation.date }}</td>
-                                    <td>{{ donation.gift_aid }}</td>
+                                    <td>
+                                        {% if donation.gift_aid %}
+                                            Yes
+                                        {% else %}
+                                            No
+                                        {% endif %}
+                                    </td>
                                     <td>£{{ donation.donation_total }}</td>
                                 </tr>
                                 {% endfor %}

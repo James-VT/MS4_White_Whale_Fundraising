@@ -38,10 +38,7 @@ def add_donation(request):
         }
         # Instantiate the form and populate with above data using:
         form = DonationForm(form_data)
-        print(type(form))
         total = int(request.POST['donation_total']),
-        print(total[0])
-        print(type(total))
 
         # Check that the form is valid using:
         if form.is_valid():
@@ -64,12 +61,8 @@ def add_donation(request):
 
             # Save user's info to their profile if it's all good here
             request.session['save_info'] = 'save-info' in request.POST
-            print(form_data)
-            print('Data:', request.POST)
             return redirect(reverse('donation_success', args=[donation.donation_number]))
         else:
-            print('Not valid')
-            print(form.errors)
             messages.error(request, 'Your donation failed')
 
         # ^^ this should be everything you need to save a donation
@@ -115,7 +108,6 @@ def add_donation(request):
     }
 
     return render(request, 'donations/donation_form.html', context)
-    # return redirect(reverse('success', args=[donation_total]))
     # ^^ this should be a return render of the donation_form template
 
 
@@ -124,12 +116,10 @@ def donation_success(request, donation_number):
     Handles successful donations
     """
     save_info = request.session.get('save_info')
-    print(save_info)
     donation = get_object_or_404(Donation, donation_number=donation_number)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        print(profile)
         # Attaches the user's profile to the donation
         donation.user_profile = profile
         donation.save()
