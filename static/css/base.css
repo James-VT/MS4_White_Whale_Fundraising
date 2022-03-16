@@ -254,7 +254,7 @@ button {
 /* -------------------------------- Parallax */
 
 .parallax-1 {
-    background-image: url("../media/images/whitekillerwhale.jpg");
+    background-image: url("../../media/whitekillerwhale.jpg");
 
     min-height: 100%;
 
@@ -265,7 +265,7 @@ button {
 }
 
 .parallax-2 {
-    background-image: url("../media/images/pinkanemonefish.jpg");
+    background-image: url("../../media/pinkanemonefish.jpg");
 
     min-height: 100%;
 
@@ -276,7 +276,7 @@ button {
 }
 
 .parallax-3 {
-    background-image: url("../media/images/eilatdolphinreef.jpg");
+    background-image: url("../media/eilatdolphinreef.jpg");
 
     min-height: 100%;
 
@@ -287,7 +287,7 @@ button {
 }
 
 .parallax-4 {
-    background-image: url("../media/images/caribbeanreefsquid.jpg");
+    background-image: url("../media/caribbeanreefsquid.jpg");
 
     min-height: 100%;
 
