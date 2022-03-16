@@ -29,7 +29,6 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['jdvt29-white-whale-fundraising', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
