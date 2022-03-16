@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'Development' in os.envrion
 
 ALLOWED_HOSTS = ['jdvt29-white-whale-fundraising', 'localhost']
 

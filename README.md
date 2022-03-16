@@ -164,36 +164,46 @@ python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db
 This creates a new .json file to store all the data on your database.
 
 10. In your settings.py, set up the Postgres database as your new database. Personally, following Boutique Ado, I commented out the existing database, wrote in the new one, and then migrated the migrations over to the new one. This required psycopg2 and dj_database_parse, which were installed via pip3.
-10.5. Assuming again that you're not using fixtures, run the following to upload everything from that .json file we created above into the new Postgres database:
+11. Assuming again that you're not using fixtures, run the following to upload everything from that .json file we created above into the new Postgres database:
 
 ```
 python3 manage.py loaddata db.json
 ```
 
 However, if you're really doing it like me, you won't bother with any of that. The data upload into the new database faced all sorts of problems, and as there was so little of it anyway, I found it easier to just migrate the models and make new data for it in the new database via the site's own features.
-11. Log into the Heroku CLI by running heroku login -i and entering your vitals.
-12. Disable the collection of static files on deployment by by running, in the terminal:
+
+12. Log into the Heroku CLI by running heroku login -i and entering your vitals.
+13. Disable the collection of static files on deployment by by running, in the terminal:
 
 ```
 heroku config:set DISABLE_COLLECSTATIC=1 --app jdvt29-white-whale-fundraising
 ```
 
-13. In settings.py, add the hostname of the Heroku app to allowed hosts, and remember to include localhost so that Gitpod doesn't stop working as a result.
+14. In settings.py, add the hostname of the Heroku app to allowed hosts, and remember to include localhost so that Gitpod doesn't stop working as a result.
 
 ```
 ALLOWED_HOSTS = ['jdvt29-white-whale-fundraising', 'localhost']
 ```
 
-14. Do a full commit and push.
+15. Do a full commit and push.
+16. Then you want to depoy to Heroku with *git push heroku main*
+17. If that doesn't work, it's probably not initialised so you may have to do that yourself with *heroku git:remote -a jdvt29-white-whale-fundraising*
+18. You'll want to make a superuser for yourself on the new database if you don't already have one. Run
 
+```
+heroku run python3 manage.py createsuperuser
+```
 
+and make yourself a superuser.
 
 ### Connect your Git repository to Heroku
 
 1. You now want to find the "deploy" tab at the top of the screen.
 2. You want to find "Deployment method" and "GitHub" from in there.
 3. In the search bar, find your GitHub repo.
-4. On the correct repo, click "Connect." DO NOT click to "Enable Automatic Deployment" at this stage. Tried it once. Can't recommend.
+4. On the correct repo, click "Connect."
+5. Enable automatic deploys.
+6. Then generate yourself a secret key at somewhere like MiniWebTool. Add it to Heroku config vars, and do the same for Gitpod if you haven't already.
 
 TO BE FINISHED
 
