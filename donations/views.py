@@ -148,8 +148,8 @@ def donation_success(request, donation_number):
                 user_profile_form.save()
 
     messages.success(request, f'Donation successfully processed! \
-        Your donation number is {donation_number}. A confirmation \
-        email will be sent to {donation.email}.')
+        Your donation number is {donation_number}. You can view \
+        the details of this donation on your profile.')
 
     template = 'donations/donation_success.html'
     context = {
