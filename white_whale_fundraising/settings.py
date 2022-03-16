@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", '')
 # DEBUG = 'DEVELOPMENT' in os.environ
 DEBUG = True
 
-ALLOWED_HOSTS = ['jdvt29-white-whale-fundraising', 'localhost']
+ALLOWED_HOSTS = ['jdvt29-white-whale-fundraising.herokuapp.com', 'localhost']
 
 # Application definition
 
