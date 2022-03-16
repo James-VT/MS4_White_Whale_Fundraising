@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load media %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'donations/css/donations.css' %}">
@@ -34,7 +33,7 @@
 		</div>
 		<figure>
 			<figcaption><strong>Look how happy you've made this happy chappy!</strong></figcaption>
-			<img src="{% media 'happyfish.jpeg' %}" alt="A happy fish sarcastic">
+			<img src="{% static 'happyfish.jpeg' %}" alt="A happy fish sarcastic">
 		</figure>
 	</div>
 
