@@ -205,7 +205,7 @@ and make yourself a superuser.
 5. Enable automatic deploys.
 6. Then generate yourself a secret key at somewhere like MiniWebTool. Add it to Heroku config vars, and do the same for Gitpod if you haven't already.
 
-TO BE FINISHED
+### AWS
 
 ---
 
