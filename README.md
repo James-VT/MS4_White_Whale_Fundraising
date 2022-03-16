@@ -155,7 +155,38 @@ Heroku allows us to host Python projects, instead of solely static sites which a
 7. Click "Create app."
 8. From Heroku Resources you'll need Postgres. The free plan will work fine for this.
 9. To get your database moved over, you'll need to swipe the database url from the config vars of your project on Heroku (this will be auto-generated for you since you chose Postgres).
+9.5. If like me you're not using fixtures, you might also need to run:
+
+```
+python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+```
+
+This creates a new .json file to store all the data on your database.
+
 10. In your settings.py, set up the Postgres database as your new database. Personally, following Boutique Ado, I commented out the existing database, wrote in the new one, and then migrated the migrations over to the new one. This required psycopg2 and dj_database_parse, which were installed via pip3.
+10.5. Assuming again that you're not using fixtures, run the following to upload everything from that .json file we created above into the new Postgres database:
+
+```
+python3 manage.py loaddata db.json
+```
+
+However, if you're really doing it like me, you won't bother with any of that. The data upload into the new database faced all sorts of problems, and as there was so little of it anyway, I found it easier to just migrate the models and make new data for it in the new database via the site's own features.
+11. Log into the Heroku CLI by running heroku login -i and entering your vitals.
+12. Disable the collection of static files on deployment by by running, in the terminal:
+
+```
+heroku config:set DISABLE_COLLECSTATIC=1 --app jdvt29-white-whale-fundraising
+```
+
+13. In settings.py, add the hostname of the Heroku app to allowed hosts, and remember to include localhost so that Gitpod doesn't stop working as a result.
+
+```
+ALLOWED_HOSTS = ['jdvt29-white-whale-fundraising', 'localhost']
+```
+
+14. Do a full commit and push.
+
+
 
 ### Connect your Git repository to Heroku
 
