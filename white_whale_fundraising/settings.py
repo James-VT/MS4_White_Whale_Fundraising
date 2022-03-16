@@ -84,7 +84,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media.images',
+                'django.template.context_processors.media.',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
