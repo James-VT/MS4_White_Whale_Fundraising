@@ -207,6 +207,97 @@ and make yourself a superuser.
 
 ### AWS
 
+1. Make yourself an AWS account if you don't already have one.
+2. In S3 services, make yourself a new bucket.
+3. Choose your closest region.
+4. In the bucket, head to the properties tab, scroll down to the part about static website hosting and switch it on. Just enter default values of index.html and errors.html where appropriate, since you won't be needing those.
+5. On the permissions tab, find the bit about CORS configuration and enter something like this:
+
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+
+6. You'll now need a security policy. In S3 Bucket Policy, use the generator. Allow all principles by entering *.
+7. You'll want the Get Object action on it, and you'll need to paste in your ARN. Generate the policy and copy it into the bucket policy. Before you click save, add /* at the end of the resource key so all pages and possible URLs are covered.
+8. Head to public access and set it to "List Objects." Click through the warning.
+9. Now you'll need a group for the bucket via IAM.
+
+## Setting up a user to access the bucket via IAM
+
+1. Back in the AWS Services menu, open IAM.
+2. First we'll create a group for the user to live in, then we'll create an access policy that gives the group the ability to access our files via the policy and add that user to the group.
+3. To start all this, click User Groups in the side bar.
+4. Click create group. Give it a meaningful name. Attach a policy to it by importing the pre-built AWS S3 Full Access Policy and add the ARN number to the policy resources again, this time in a list where you have it twice but the second one has that useful /* on it, then attach the policy to the group.
+5. Click Next: Tags, which are optional, and then Review.
+6. Give it a meaningful name, a description if you want one, and click Create policy.
+7. Now attach to the user group you created earlier. Go to user groups in the side menu, select the relevant group, and add the policy to it by clicking "Add permissions" and clicking "Attach Policies." Attach it from there.
+8. Then you create a user to put in the group. Navigate to the "Users" page, to "Add User," then give the user a suitable name, give them programmatic access, and select Next.
+9. Click the group to add them to, and click through the end.
+10. Download the CSV file that is produced. It is important you do this now, because you can't get this file again. It contains the user access key and secret key.
+
+## Connecting it all up to Django
+
+1. Install two new packages with pip3: boto3 and django-storages (and freeze them into requirements.txt)
+2. Add storages to installed apps in settings.py.
+3. Create an if statement to check if your environment variables contain something like 'USE_AWS' and add this variable with a value of True to Heroku's config vars. As an example, I've got this:
+
+```
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = 'jdvt29-white-whale-fundraising'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+```
+
+4. Delete your disable_collectstatic variable from Heroku, since when we deploy to Heroku this time Django will collect static files and load them to S3.
+5. Create a file in the root directory called custom_storages.py. This is for if someone uploads images to the site in the future, and for telling Django that in production we want to use S3 to store static files. I've configured it like this:
+
+```
+""" Tells Django where things are stored """
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+
+class StaticStorage(S3Boto3Storage):
+    """ Tells Django where things are stored """
+    location = settings.STATICFILES_LOCATION
+
+
+class MediaStorage(S3Boto3Storage):
+    """ Tells Django where things are stored """
+    location = settings.MEDIAFILES_LOCATION
+
+```
+
+6. Tell settings.py that that's where we're storing static files and we want to use the storage classes there by adding, in settings.py, this to what's above:
+
+```
+# Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorages'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+# Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}'
+```
+
+
 ---
 
 # Credits
