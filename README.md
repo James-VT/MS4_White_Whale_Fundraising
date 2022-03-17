@@ -453,6 +453,10 @@ Fellow student [Suzy](https://github.com/suzybee1987) was once again hugely help
 
 For the error pages, the help of fellow students Guillermo Brachetta and Tom Nagy was invaluable. They helped reassure me as to where to locate them and why they weren't working during testing, and with several other issues.
 
+My Mentor, Mo Shami, was supportive and encouraging throughout, especially when my over-ambitious initial idea for this project fell through and I had to deal with the fact I'd wasted weeks of work. He kept my head above water with his reassurance and help.
+
+Last but not least, my wife Loelia who has been a patient rock for me throughout this learning experience of the last year. Thank you.
+
 ## Websites
 
 Several websites with similar features were helpful to understand what sort of information might be seen on a typical charity website, for example form fields, membership types, etc. In particular, the websites of the UK government, the Royal Armouries, the National Funding Scheme, and the National Trust influenced my decisions on layouts, styling and orders. Credit inevitably also goes to StackOverflow, W3 (particular for the parallax on the home page) and to Code Institute's Slack for a constant resource of information and answers.
