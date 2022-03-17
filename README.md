@@ -1,5 +1,9 @@
 # White Whale Fundraising
 
+![Image of responsive mock-ups of site](assets/mockups.png)
+
+The live site can be visited [here.](https://jdvt29-white-whale-fundraising.herokuapp.com/)
+
 # About
 
 This website serves as the main online presence of a charitable fundraising organisation dedicated to the conservation of whales and other sea creatures. Visitors to the site can become members of the organisation for a rolling monthly or annual donation, make one-off donations, and sponsor fundraising activities. Donations for membership are at a fixed amount, while one-off donations and sponsorships can be for any amount. Users can leave public messages for fundraisers whom they have sponsored. The owner(s) of the site will be using it to drive membership subscriptions, generate donations, and raise awareness of fundraising activities.
@@ -7,6 +11,27 @@ This website serves as the main online presence of a charitable fundraising orga
 ---
 
 # Table of contents
+
+* # [UX](https://github.com/James-VT/MS4_White_Whale_Fundraising#ux)
+    * ## [User stories](https://github.com/James-VT/MS4_White_Whale_Fundraising#user-stories)
+* # [Features](https://github.com/James-VT/MS4_White_Whale_Fundraising#features)
+    * ## [Navigation bar](https://github.com/James-VT/MS4_White_Whale_Fundraising#navigation-bar)
+    * ## [Profile creation and management](https://github.com/James-VT/MS4_White_Whale_Fundraising#profile-creation-and-management)
+    * ## [Responsive design](https://github.com/James-VT/MS4_White_Whale_Fundraising#responsive-design)
+    * ## [Donation form](https://github.com/James-VT/MS4_White_Whale_Fundraising#donation-form)
+    * ## [Blog](https://github.com/James-VT/MS4_White_Whale_Fundraising#blog)
+* # [Design](https://github.com/James-VT/MS4_White_Whale_Fundraising#design)
+    * ## [Wireframes](https://github.com/James-VT/MS4_White_Whale_Fundraising#wireframes)
+    * ## [Database schema](https://github.com/James-VT/MS4_White_Whale_Fundraising#database-schema)
+* # [Deployment](https://github.com/James-VT/MS4_White_Whale_Fundraising#deployment)
+* # [Testing](https://github.com/James-VT/MS4_White_Whale_Fundraising#testing)
+* # [Credits](https://github.com/James-VT/MS4_White_Whale_Fundraising#credits)
+    * ## [Tutorials](https://github.com/James-VT/MS4_White_Whale_Fundraising#tutorials)
+    * ## [People](https://github.com/James-VT/MS4_White_Whale_Fundraising#people)
+    * ## [Websites](https://github.com/James-VT/MS4_White_Whale_Fundraising#websites)
+    * ## [Images](https://github.com/James-VT/MS4_White_Whale_Fundraising#images)
+
+---
 
 # UX
 This site is built to serve as a full-stack ecommerce site for a charitable organisation. It utilises Stripe to allow users to make donations via secure transactions, and is built using the Django framework. Users are able to register an account with the site, with which they can then become paying members if they wish, or make one-off donations or sponsor fundraisers and leave comments of encouragement.
@@ -318,6 +343,11 @@ class MediaStorage(S3Boto3Storage):
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}'
 ```
 
+---
+
+# Testing
+
+The testing file can be found here: [testing.md](testing.md)
 
 ---
 
