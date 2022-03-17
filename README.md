@@ -96,6 +96,27 @@ However, with the theme of aquatic life I chose colours suited to this. Purples 
 
 Google Fonts were chosen for attractiveness against these colours. Initially I was going to use the Lobster font for larger text elements simply because it had a marine-themed name but then I discovered Righteous and much preferred that. Roboto is used elsewhere due to its simple popularity across web design.
 
+## Wireframes
+
+ Desktop | Mobile |
+| --- | --- |
+| [Add and edit blog post](assets/wireframes/large/addeditblogformlarge.png) | [Add and edit blog post](assets/wireframes/regular/addeditblogform.png)
+| [Blog list page](assets/wireframes/large/bloglistlarge.png) | [Blog list page](assets/wireframes/regular/bloglist.png)
+| [Donation form](assets/wireframes/large/donationformlarge.png) | [Donation form](assets/wireframes/regular/donationformwireframe.png)
+| [Donation success page](assets/wireframes/large/donationsuccesspagelarge.png) | [Donation success page](assets/wireframes/regular/donationsuccess.png)
+| [Error pages](assets/wireframes/large/errorpagelarge.png) | [Error pages](assets/wireframes/regular/errorpage.png)
+| [Landing page](assets/wireframes/large/homepagelarge.png) | [Landing page](assets/wireframes/regular/homepagewireframe.png)
+| [Profile view](assets/wireframes/large/profileviewlarge.png) | [Profile view](assets/wireframes/regular/profileview.png)
+| [View blog post](assets/wireframes/large/viewblogpostlarge.png) | [View blog post](assets/wireframes/regular/viewblogpost.png)
+
+---
+
+## Database schema
+
+During development this project used SQLite3, but once on Heroku it was switched over to PostgreSQL. Below is a visualisation of the data schema for this project.
+
+![Image of the data schema](assets/schema/dataschema.png)
+
 ---
 
 # Deployment
