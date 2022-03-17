@@ -90,6 +90,7 @@ The donation form allows users to donate a sum of money to the charity. A series
     * Fill in their details so that the charity can apply to have the donation value augmented with Gift Aid. For this reason, all required fields are for data required by HMRC for Gift Aid to be applied.
     * Have their details auto-fill from those in their profile, if they are logged in and have completed same. Likewise, if users are logged in but have not submitted default details, a checkbox allows users to choose whether details they enter onto the form are saved to their profiles.
     * Users do not need to be logged in to donate.
+    * (Remember that as we're still only using a profile in test state on Stripe, we need to use Stripe's dummy card code to test payments which is 424242424242, and then any future date and CVC number.)
 
 ## Blog
 
