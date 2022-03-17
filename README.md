@@ -6,7 +6,7 @@ The live site can be visited [here.](https://jdvt29-white-whale-fundraising.hero
 
 # About
 
-This website serves as the main online presence of a charitable fundraising organisation dedicated to the conservation of whales and other sea creatures. Visitors to the site can become members of the organisation for a rolling monthly or annual donation, make one-off donations, and sponsor fundraising activities. Donations for membership are at a fixed amount, while one-off donations and sponsorships can be for any amount. Users can leave public messages for fundraisers whom they have sponsored. The owner(s) of the site will be using it to drive membership subscriptions, generate donations, and raise awareness of fundraising activities.
+This website serves as the main online presence of a charitable fundraising organisation dedicated to the conservation of whales and other sea creatures. Visitors to the site can make one-off donations, and post on the blog. The owner(s) of the site will be using it to generate donations, and raise awareness of fundraising activities via the blog.
 
 ---
 
